@@ -6,7 +6,7 @@ Website link: https://llwsydgs.com.
 
 Author Introduction: My name is Gao bo, I am an old full-stack programmer in China. I created this website and decided to make the front-end part open-source. 
 
-GitHub address: XXXXXXXX.
+GitHub address: https://github.com/gaobo-code/Expose-Lao-Lai-website.
 
 Skills and deliverables: Next.js, Tailwind CSS, Typescript
 
