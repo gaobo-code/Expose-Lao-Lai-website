@@ -24,7 +24,7 @@ import type { Viewport } from 'next'
 import localFont from 'next/font/local'
 
 const zcool = localFont({
-  src: '../ZCOOLKuaiLe-Regular.woff2',
+  src: '../ZCOOLKuaiLe-Subset.woff2',
   weight: '400',
   display: 'swap',
   fallback: [
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   keywords: ["老赖", "王思宇", "软件开发", "沈阳衡源网络科技", "拖欠工资", "骗子公司", "沈阳衡源网络科技有限公司"],
   openGraph: {
     title: "老赖王思宇的故事",
-    description: "欢迎光临本网站！揭发老赖，人人有责！",
+    description: "欢迎光临本网站！曝光老赖，人人有责！",
     url: "https://llwsydgs.com",
     siteName: "老赖王思宇的故事",
     locale: "zh-CN",
@@ -55,12 +55,6 @@ export const metadata: Metadata = {
         alt: "老赖王思宇年轻时的照片"
       }
     ]
-  },
-  icons: {
-    shortcut: {
-      url: "https://llwsydgs.com/favicon.ico",
-      type: "image/x-icon",
-    }
   }
 };
 

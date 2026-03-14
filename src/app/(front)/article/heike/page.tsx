@@ -212,7 +212,7 @@ export default function Heike() {
             三、真凶浮出水面
           </h3>
           <p className="my-4 mb-6 break-all justify-cjk">
-            在2025年12月16日我调整了应对策略，将linux的新增的文件权限，默认设置为只读，不可编辑也不可执行，这些新增的病毒文件执行不了，CPU也就不会飙升。于是在12月17日，真凶浮出水面。
+            在2025年12月16日我调整了应对策略，将linux的新增的文件权限，默认设置为只读，不可编辑也不可执行，这样，那些新增的病毒文件执行不了，CPU也就不会飙升。于是在12月17日，真凶浮出水面。
           </p>
           <div className="grid grid-cols-1 gap-6 w-full box-border">
             <Image
@@ -291,7 +291,7 @@ export default function Heike() {
             四、事件的解决
           </h3>
           <p className="my-4 break-all justify-cjk">
-            最后，我调查出黑客攻击的入口。我原先以为是我的代码写的有问题，后来我发现是我的依赖包有漏洞，就是说我引入了别人开发的包，别人开发的包有漏洞。node_modules中的有个依赖包叫做drizzle，这个包是用来连接数据库的，存在被攻击的漏洞，我将它卸载掉，改为了别的依赖包，问题得以解决。从2025年12月18日开始，网站一切恢复正常。以防万一，我为此加了几层保险。现在的网站是非常可靠的。
+            最后，我加强了安全防护。第一、禁用wget、curl，禁止下载脚本，到我的网站服务器中执行。第二、禁用chmod、chown，禁止修改文件权限和系统配置文件。从2025年12月18日开始，网站一切恢复正常。现在的网站是十分可靠的。
           </p>
           <h3 className="mt-8 mb-4 break-all text-[21px] font-bold md:text-[25px]">
             五、王思宇的目的

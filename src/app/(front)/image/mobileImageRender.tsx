@@ -34,7 +34,7 @@ export default function MobileImageRender({
           {...(index === 0 ? { priority: true } : {})}
           onClick={() => openDialogMobileFun(index)}
         />
-        <div className="max-w-[616px] text-lg  leading-[1.6] tracking-wider justify-cjk">
+        <div className="max-w-[616px] text-[19px] leading-[1.6] tracking-wider justify-cjk">
           {item.description}
         </div>
       </div>

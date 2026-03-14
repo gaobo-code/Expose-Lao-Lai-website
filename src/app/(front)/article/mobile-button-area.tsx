@@ -118,7 +118,7 @@ export default function MobileButtonArea() {
 
             <LinkIcon onClick={copyLinkFun} className="size-7 b:size-7 b:hover:scale-110 transition text-maincolor dark:text-foreground cursor-pointer" />
             <div className="popup-text-mobile" ref={textRef}>
-                揭发老赖<br />
+                曝光老赖<br />
                 人人有责
             </div>
         </div>

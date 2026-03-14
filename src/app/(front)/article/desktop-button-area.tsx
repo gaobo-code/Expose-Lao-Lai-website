@@ -129,7 +129,7 @@ export default function ButtonArea() {
             </HoverCard>
 
             <div className="popup-text" ref={textRef}>
-                揭发老赖，人人有责
+                曝光老赖，人人有责
             </div>
         </div>
     )
