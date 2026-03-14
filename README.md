@@ -3,7 +3,7 @@
 
 Project name: Expose Lao Lai website
 
-Project description: Lao Lai in China refers to people who maliciously owe money and lose credit. I met an Lao Lai and for some reason, I came to work at his company. He is a scammer. So I created a website to expose him. The name of the website is《老赖王思宇的故事》, the English name is the story of Lao Lai Wang Siyu. Website link: https://llwsydgs.com or https://llwsydgs.cn.
+Project description: Lao Lai in China refers to people who maliciously owe money and lose credit. I met an Lao Lai and for some reason, I came to work at his company. He is a scammer. So I created a website to expose him. The name of the website is《老赖王思宇的故事》, the English name is the story of Lao Lai Wang Siyu. 
 
 Website link: https://llwsydgs.com or https://llwsydgs.cn.
 
