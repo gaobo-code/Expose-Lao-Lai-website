@@ -29,6 +29,10 @@ const menu = [
   {
     title: "视频",
     link: "/video"
+  },
+  {
+    title: "评论",
+    link: "/comment"
   }
 ];
 

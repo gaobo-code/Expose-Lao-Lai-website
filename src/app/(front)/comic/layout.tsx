@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "老赖王思宇｜幽默现实漫画",
-  description: "轻松一刻，在笑声中看清套路，一部披着幽默外衣的现实漫画。",
+  title: "幽默现实漫画",
+  description: "老赖王思宇，轻松一刻，在笑声中看清套路。",
   keywords: [
     "老赖王思宇",
     "现实漫画",
@@ -14,8 +14,8 @@ export const metadata: Metadata = {
     "沈阳衡源网络科技"
   ],
   openGraph: {
-    title: "老赖王思宇｜幽默现实漫画",
-    description: "轻松一刻，在笑声中看清套路，一部披着幽默外衣的现实漫画。",
+    title: "幽默现实漫画",
+    description: "老赖王思宇，轻松一刻，在笑声中看清套路。",
     url: "https://llwsydgs.com",
     siteName: "老赖王思宇的故事",
     locale: "zh-CN",
