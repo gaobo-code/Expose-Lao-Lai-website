@@ -1,19 +1,17 @@
-Project name: Expose Lao Lai website
+Project Name: Expose Lao Lai website.
 
-Project description: Lao Lai in China refers to people who maliciously owe money and lose credit. I met an Lao Lai and for some reason, I came to work at his company. He is a scammer. So I created a website to expose him. The name of the website is《老赖王思宇的故事》, the English name is the story of Lao Lai Wang Siyu. The website will be continuously updated. 
+Project description: In China, “Lao Lai” refers to people who deliberately avoid paying debts and have lost their credit. I once encountered such a person and, for some reason, ended up working at his company. He turned out to be a scammer. So I created a website to expose him. The name of the website is “The Story of Lao Lai Wang Siyu.”
 
-Website link: https://llwsydgs.com.
+Skills and deliverables: Next.js, Tailwind CSS, Linux, TypeScript.
 
-Author Introduction: My name is Gao bo, I am an old full-stack programmer in China. I created this website and decided to make the front-end part open-source. 
+Website domain: https://llwsydgs.com
 
-GitHub address: XXXXXXXX.
+Author Introduction: My name is Gao Bo. I am an experienced full-stack developer based in China. I designed and developed this website independently, and I decided to make the front-end part open-source.
 
-Skills and deliverables: Next.js, Tailwind CSS, Typescript
+GitHub Repository: https://github.com/gaobo-code/Expose-Lao-Lai-website
 
-Front-end part details: The front-end is currently divided into four modules: homepage, articles, images, and videos. It is responsive design and is compatible with both computers and mobile phones. The browser can switch between bright and dark mode. It has SEO optimization and can be searched on search engines. I have basically completed the front-end development.
+Front-end Details: The front-end is divided into six main modules: homepage, articles, images, comics, videos, and comments. It uses responsive design and works well on both desktop and mobile devices. The website supports light and dark mode switching and is optimized for SEO, allowing search engines to index its content.
 
-Back-end part details: I am developing it.
+Back-end Details: The back-end includes QQ group management, comment management, system settings, and security features designed to help prevent hacking attempts and malicious attacks.
 
-Project deployment: The website is deployed on jd cloud, centos 8 system and nginx server. It has been attacked by a hacker hired by this Lao Lai, and has been successfully defended and is currently in a relatively secure state.
-
-Project Launch in local: 'npm install' and then 'npm run dev'
+Project Deployment: The website is deployed on Tencent Cloud, running on CentOS 8 with an Nginx server.
