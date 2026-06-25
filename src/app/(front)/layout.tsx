@@ -55,6 +55,9 @@ export const metadata: Metadata = {
         alt: "老赖王思宇年轻时的照片"
       }
     ]
+  },
+  appleWebApp: {
+    title: "老赖王思宇的故事"
   }
 };
 
