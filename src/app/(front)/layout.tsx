@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     ]
   },
   appleWebApp: {
-    title: "老赖王思宇的故事"
+    title: "老赖王思宇"
   }
 };
 
