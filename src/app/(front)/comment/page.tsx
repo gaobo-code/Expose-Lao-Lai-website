@@ -77,7 +77,10 @@ export default async function Comment() {
                           width={44}
                           height={44}
                           className="rounded-full border-2 border-white shadow-[0_8px_18px_rgba(24,39,75,0.12)] dark:border-[#596272] dark:shadow-[0_8px_18px_rgba(0,0,0,0.28)]"
+                          preload={true}
                           priority
+                          loading="eager"
+                          fetchPriority="high"
                         />
                         <span className="absolute -bottom-0.5 -right-0.5 size-3 rounded-full border-2 border-white bg-text3 dark:border-[#303641]" />
                       </div>
