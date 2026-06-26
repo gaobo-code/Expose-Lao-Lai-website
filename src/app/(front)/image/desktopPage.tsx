@@ -57,6 +57,7 @@ export default function DesktopPage({ imageData }: Props) {
                 alt={imageData[imageIndex].title}
                 fill
                 style={{ objectFit: "contain" }}
+                sizes="960px"
                 className=""
                 {...(imageIndex === 0 ? { priority: true } : {})}
               />
