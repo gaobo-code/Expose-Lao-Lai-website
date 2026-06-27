@@ -21,7 +21,9 @@ export default function DesktopPage({ imageData }: Props) {
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    setReady(true);
+    setTimeout(() => {
+      setReady(true);
+    }, 500);
   }, []);
 
   const leftButtonHandleClick = (event: any) => {
