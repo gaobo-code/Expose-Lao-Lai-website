@@ -7,7 +7,7 @@ function getImageUrl(id: number) {
   return `/avatar${(id % 14 + 1)}.webp`;
 }
 
-export default async function Comment() {
+export default function Comment() {
 
   return (
     <div className="w-full min-h-[calc(100svh-var(--spacing)*14)] b:min-h-[calc(100svh-var(--spacing)*33)] bg-[linear-gradient(180deg,var(--thirdbackground)_0%,var(--secondbackground)_48%,var(--background)_100%)] px-3 py-4 sm:px-6 b:py-5 dark:bg-[linear-gradient(180deg,#20242c_0%,#1d2026_48%,#23272f_100%)]">

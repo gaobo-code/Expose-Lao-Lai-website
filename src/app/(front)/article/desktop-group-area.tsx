@@ -1,7 +1,7 @@
 import { getDigitMap } from "@/lib/utils"
 import { groupData } from "@/lib/data"
 
-export default async function DesktopGroupArea() {
+export default function DesktopGroupArea() {
    
     return (
         <>
