@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AnimatePresence, motion, MotionConfig } from "framer-motion";
 
 type imageProps = {
@@ -18,6 +18,11 @@ type Props = {
 
 export default function DesktopPage({ imageData }: Props) {
   const [imageIndex, setImageIndex] = useState(0);
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    setReady(true);
+  }, []);
 
   const leftButtonHandleClick = (event: any) => {
     event.stopPropagation();
@@ -52,7 +57,7 @@ export default function DesktopPage({ imageData }: Props) {
                 opacity: { duration: 0.3 },
               }}
             >
-              <Image
+              {ready && <Image
                 src={imageData[imageIndex].url}
                 alt={imageData[imageIndex].title}
                 fill
@@ -61,6 +66,7 @@ export default function DesktopPage({ imageData }: Props) {
                 className=""
                 {...(imageIndex === 0 ? { priority: true } : {})}
               />
+              }
             </motion.div>
           </AnimatePresence>
         </div>
