@@ -7,6 +7,10 @@ function getImageUrl(id: number) {
   return `/avatar${(id % 14 + 1)}.webp`;
 }
 
+function abc() {
+  
+}
+
 export default async function Comment() {
 
   return (
