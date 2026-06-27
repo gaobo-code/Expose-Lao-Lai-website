@@ -23,7 +23,7 @@ export default function DesktopPage({ imageData }: Props) {
   useEffect(() => {
     setTimeout(() => {
       setReady(true);
-    }, 200);
+    }, 300);
   }, []);
 
   const leftButtonHandleClick = (event: any) => {
