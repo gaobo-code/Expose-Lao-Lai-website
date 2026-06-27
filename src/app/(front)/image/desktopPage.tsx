@@ -23,7 +23,7 @@ export default function DesktopPage({ imageData }: Props) {
   useEffect(() => {
     setTimeout(() => {
       setReady(true);
-    }, 300);
+    }, 400);
   }, []);
 
   const leftButtonHandleClick = (event: any) => {
@@ -56,7 +56,7 @@ export default function DesktopPage({ imageData }: Props) {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{
-                opacity: { duration: 0.3 },
+                opacity: { duration: 0.2 },
               }}
             >
               {ready && <Image
