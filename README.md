@@ -4,7 +4,7 @@ Project description: In China, “Lao Lai” refers to people who deliberately a
 
 Skills and deliverables: Next.js, Tailwind CSS, Linux, TypeScript.
 
-Website domain: https://llwsydgs.com
+Website domain: There are two domains. https://llwsydgs.cn is deployed on Vercel, which is now accessible in mainland China. https://llwsydgs.com is deployed on Tencent Cloud, CentOS 8 system with Nginx server.
 
 Author Introduction: My name is Gao Bo. I am an experienced full-stack developer based in China. I designed and developed this website independently, and I decided to make the front-end part open-source.
 
@@ -13,5 +13,3 @@ GitHub Repository: https://github.com/gaobo-code/Expose-Lao-Lai-website
 Front-end Details: The front-end is divided into six main modules: homepage, articles, images, comics, videos, and comments. It uses responsive design and works well on both desktop and mobile devices. The website supports light and dark mode switching and is optimized for SEO, allowing search engines to index its content.
 
 Back-end Details: The back-end includes QQ group management, comment management, system settings, and security features designed to help prevent hacking attempts and malicious attacks.
-
-Project Deployment: The website is deployed on Tencent Cloud, running on CentOS 8 with an Nginx server.
