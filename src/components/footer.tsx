@@ -18,7 +18,7 @@ export function Footer() {
             className="underline text-sm b:text-base"
             target="_blank"
           >
-            辽ICP备2025068275号-1
+            辽ICP备2025068275号-2
           </a>
         </span>
         <span className="text-sm b:text-base block b:hidden">
@@ -28,7 +28,7 @@ export function Footer() {
             className="underline text-sm b:text-base"
             target="_blank"
           >
-            辽ICP备2025068275号-1
+            辽ICP备2025068275号-2
           </a>
         </span>
       </div>

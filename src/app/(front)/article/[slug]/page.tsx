@@ -56,13 +56,13 @@ export async function generateMetadata(props: Params): Promise<Metadata> {
     openGraph: {
       title: title,
       description: excerpt,
-      url: `https://llwsydgs.com/article/${params.slug}`,
+      url: `https://llwsydgs.cn/article/${params.slug}`,
       siteName: "老赖王思宇的故事",
       locale: "zh-CN",
       type: "website",
       images: [
         {
-          url: "https://llwsydgs.com/opengraph-image.png",
+          url: "https://llwsydgs.cn/opengraph-image.png",
           width: 1200,
           height: 630,
           alt: "老赖王思宇年轻时的照片",

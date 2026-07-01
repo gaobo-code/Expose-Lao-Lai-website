@@ -1,6 +1,6 @@
 // next-sitemap.js
 module.exports = {
-  siteUrl: 'https://llwsydgs.com',
+  siteUrl: 'https://llwsydgs.cn',
   generateRobotsTxt: true,  // Generates robots.txt file (optional)
   sitemapSize: 500,  // Max number of URLs per sitemap file
   changefreq: 'weekly',  // Frequency of content change (options: 'always', 'hourly', 'daily', 'weekly', 'monthly', 'yearly', 'never')

@@ -16,13 +16,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: "幽默现实漫画",
     description: "老赖王思宇，轻松一刻，在笑声中看清套路。",
-    url: "https://llwsydgs.com",
+    url: "https://llwsydgs.cn",
     siteName: "老赖王思宇的故事",
     locale: "zh-CN",
     type: "website",
     images: [
       {
-        url: "https://llwsydgs.com/opengraph-image.png",
+        url: "https://llwsydgs.cn/opengraph-image.png",
         width: 1200,
         height: 630,
         alt: "老赖王思宇年轻时的照片"

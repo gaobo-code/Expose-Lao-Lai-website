@@ -43,13 +43,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: "老赖王思宇的故事",
     description: "欢迎光临本网站！曝光老赖，人人有责！新增了漫画！",
-    url: "https://llwsydgs.com",
+    url: "https://llwsydgs.cn",
     siteName: "老赖王思宇的故事",
     locale: "zh-CN",
     type: "website",
     images: [
       {
-        url: "https://llwsydgs.com/opengraph-image.png",
+        url: "https://llwsydgs.cn/opengraph-image.png",
         width: 1200,
         height: 630,
         alt: "老赖王思宇年轻时的照片"

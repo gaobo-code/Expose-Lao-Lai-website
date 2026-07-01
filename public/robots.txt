@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://llwsydgs.com
+Host: https://llwsydgs.cn
 
 # Sitemaps
-Sitemap: https://llwsydgs.com/sitemap.xml
+Sitemap: https://llwsydgs.cn/sitemap.xml
