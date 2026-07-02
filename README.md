@@ -4,7 +4,7 @@ Project description: In China, “Lao Lai” refers to people who deliberately a
 
 Skills and deliverables: Next.js, Tailwind CSS, Linux, TypeScript.
 
-Website domain: There are two domains. https://llwsydgs.cn is deployed on Vercel. https://llwsydgs.com is deployed on Tencent Cloud, CentOS 8 system with Nginx server.
+Website domain: There are two domains. https://llwsydgs.com is deployed on Vercel. https://llwsydgs.cn is deployed on Tencent Cloud, CentOS 8 system with Nginx server.
 
 Author Introduction: My name is Gao Bo. I am an experienced full-stack developer based in China. I designed and developed this website independently, and I decided to make the front-end part open-source.
 
