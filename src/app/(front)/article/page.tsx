@@ -1,5 +1,20 @@
 import { getAllPosts } from "@/lib/api";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "老赖王思宇的故事",
+  alternates: {
+    canonical: "https://llwsydgs.com/article"
+  },
+  openGraph: {
+    url: "https://llwsydgs.com/article",
+  },
+  robots:{
+    index:false,
+    follow:true,
+  }
+};
 
 const otherArray = [
   {

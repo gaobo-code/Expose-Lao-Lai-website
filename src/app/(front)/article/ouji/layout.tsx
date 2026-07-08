@@ -1,24 +1,28 @@
 import type { Metadata } from "next";
 import ArticleLayoutShell from "../article-layout-shell";
+import ArticleJsonLd from "@/components/article-json-ld";
 
 export const metadata: Metadata = {
   title: "骗子偶寄和其小号",
-  description: "本文是群友整理出来的，曝光了王思宇及其团队在QQ群骗人的过程。",
+  description: "曝光了王思宇及其团队，在QQ群表演杀猪盘骗人的过程。",
   keywords: [
     "老赖",
     "王思宇",
     "软件开发",
-    "沈阳衡源网络科技",
+    "杀猪盘",
     "拖欠工资",
     "骗子公司",
   ],
+  alternates: {
+    canonical: "https://llwsydgs.com/article/ouji"
+  },
   openGraph: {
     title: "骗子偶寄和其小号",
-    description: "本文是群友整理出来的，曝光了王思宇及其团队在QQ群骗人的过程。",
+    description: "曝光了王思宇及其团队，在QQ群表演杀猪盘骗人的过程。",
     url: "https://llwsydgs.com/article/ouji",
     siteName: "老赖王思宇的故事",
     locale: "zh-CN",
-    type: "website",
+    type: "article",
     images: [
       {
         url: "https://llwsydgs.com/opengraph-image.png",
@@ -28,6 +32,12 @@ export const metadata: Metadata = {
       },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "骗子偶寄和其小号",
+    description: "曝光了王思宇及其团队，在QQ群表演杀猪盘骗人的过程。",
+    images: ["https://llwsydgs.com/opengraph-image.png"],
+  }
 };
 
 export default function OujiLayout({
@@ -35,5 +45,12 @@ export default function OujiLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <ArticleLayoutShell>{children}</ArticleLayoutShell>;
+  return <>
+    <ArticleJsonLd
+      title={metadata.title as string}
+      description={metadata.description as string}
+      path="https://llwsydgs.com/article/ouji"
+    />
+    <ArticleLayoutShell>{children}</ArticleLayoutShell>
+  </>;
 }

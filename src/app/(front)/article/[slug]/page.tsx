@@ -6,6 +6,8 @@ import markdownToHtml from "@/lib/markdownToHtml";
 import { PostBody } from "@/components/post-body";
 import { PostHeader } from "@/components/post-header";
 
+import ArticleJsonLd from "@/components/article-json-ld";
+
 // Manually restrict article URL
 const slugCheck = ["chuzhong", "hengyuan", "laolai", "ma", "fuchong", "jiangxue"];
 
@@ -25,6 +27,11 @@ export default async function Article(props: Params) {
 
   return (
     <>
+      <ArticleJsonLd
+        title={post.title}
+        description={post.excerpt}
+        path={`https://llwsydgs.com/article/${params.slug}`}
+      />
       <PostHeader title={post.title} />
       <PostBody content={content} />
     </>
@@ -53,13 +60,16 @@ export async function generateMetadata(props: Params): Promise<Metadata> {
     title: title,
     description: excerpt,
     keywords: keywords,
+    alternates: {
+      canonical: `https://llwsydgs.com/article/${params.slug}`
+    },
     openGraph: {
       title: title,
       description: excerpt,
       url: `https://llwsydgs.com/article/${params.slug}`,
       siteName: "老赖王思宇的故事",
       locale: "zh-CN",
-      type: "website",
+      type: "article",
       images: [
         {
           url: "https://llwsydgs.com/opengraph-image.png",
@@ -69,6 +79,12 @@ export async function generateMetadata(props: Params): Promise<Metadata> {
         },
       ],
     },
+    twitter: {
+      card: "summary_large_image",
+      title: title,
+      description: excerpt,
+      images: ["https://llwsydgs.com/opengraph-image.png"],
+    }
   };
 }
 

@@ -1,3 +1,19 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "老赖王思宇的故事",
+  alternates: {
+    canonical: "https://llwsydgs.com/video"
+  },
+  openGraph: {
+    url: "https://llwsydgs.com/video",
+  },
+  robots:{
+    index:false,
+    follow:false
+  }
+};
+
 export default function Video() {
   return (
     <div className="w-screen bg-thirdbackground flex flex-col items-center">

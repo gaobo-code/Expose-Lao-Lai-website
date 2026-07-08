@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ArticleLayoutShell from "../article-layout-shell";
+import ArticleJsonLd from "@/components/article-json-ld";
 
 export const metadata: Metadata = {
   title: "QQ群的骇人言论",
@@ -13,13 +14,16 @@ export const metadata: Metadata = {
     "电诈",
     "电信诈骗"
   ],
+  alternates: {
+    canonical: "https://llwsydgs.com/article/hairen"
+  },
   openGraph: {
     title: "QQ群的骇人言论",
     description: "有人在QQ群中说，曾经去缅北参加了培训，新学了一招，叫水牢，就是把人困在水里，然后放电，全方位的电。",
     url: "https://llwsydgs.com/article/hairen",
     siteName: "老赖王思宇的故事",
     locale: "zh-CN",
-    type: "website",
+    type: "article",
     images: [
       {
         url: "https://llwsydgs.com/opengraph-image.png",
@@ -29,6 +33,12 @@ export const metadata: Metadata = {
       },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "QQ群的骇人言论",
+    description: "有人在QQ群中说，曾经去缅北参加了培训，新学了一招，叫水牢，就是把人困在水里，然后放电，全方位的电。",
+    images: ["https://llwsydgs.com/opengraph-image.png"],
+  }
 };
 
 export default function HairenLayout({
@@ -36,5 +46,12 @@ export default function HairenLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <ArticleLayoutShell>{children}</ArticleLayoutShell>;
+  return <>
+    <ArticleJsonLd
+      title={metadata.title as string}
+      description={metadata.description as string}
+      path="https://llwsydgs.com/article/hairen"
+    />
+    <ArticleLayoutShell>{children}</ArticleLayoutShell>
+  </>;
 }

@@ -2,21 +2,17 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "幽默现实漫画",
-  description: "老赖王思宇，轻松一刻，在笑声中看清套路。",
-  keywords: [
-    "老赖王思宇",
-    "现实漫画",
-    "职场套路",
-    "软件行业故事",
-    "拖欠工资",
-    "互联网经历",
-    "程序员漫画",
-    "沈阳衡源网络科技"
-  ],
+  robots:{
+    index:false,
+    follow:false
+  },
+  alternates: {
+    canonical: "https://llwsydgs.com/comic"
+  },
   openGraph: {
     title: "幽默现实漫画",
     description: "老赖王思宇，轻松一刻，在笑声中看清套路。",
-    url: "https://llwsydgs.com",
+    url: "https://llwsydgs.com/comic",
     siteName: "老赖王思宇的故事",
     locale: "zh-CN",
     type: "website",
@@ -28,6 +24,12 @@ export const metadata: Metadata = {
         alt: "老赖王思宇年轻时的照片"
       }
     ]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "幽默现实漫画",
+    description: "老赖王思宇，轻松一刻，在笑声中看清套路。",
+    images: ["https://llwsydgs.com/opengraph-image.png"],
   }
 };
 

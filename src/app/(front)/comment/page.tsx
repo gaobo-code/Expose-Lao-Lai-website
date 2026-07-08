@@ -2,6 +2,21 @@ import Image from "next/image";
 import { Inbox, MessageCircle, Quote, ShieldCheck, Sparkles } from "lucide-react";
 import clsx from "clsx";
 import { commentData } from "@/lib/data"
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "老赖王思宇的故事",
+  alternates: {
+    canonical: "https://llwsydgs.com/comment"
+  },
+  openGraph: {
+    url: "https://llwsydgs.com/comment",
+  },
+  robots:{
+    index:false,
+    follow:false
+  }
+};
 
 function getImageUrl(id: number) {
   return `/avatar${(id % 14 + 1)}.webp`;

@@ -1,6 +1,21 @@
 import { guansi,zhizaiyuanfangtianyanchafengxian } from "@/lib/constants"
 import MobilePage from "./mobilePage";
 import DesktopPage from "./desktopPage";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "老赖王思宇的故事",
+  alternates: {
+    canonical: "https://llwsydgs.com/image"
+  },
+  openGraph: {
+    url: "https://llwsydgs.com/image",
+  },
+  robots:{
+    index:false,
+    follow:false
+  }
+};
 
 export const imageData = [
   {
