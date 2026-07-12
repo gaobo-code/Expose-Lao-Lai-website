@@ -2,12 +2,19 @@
 
 import { toast } from "sonner"
 import { LinkIcon } from "@heroicons/react/24/solid";
+import {
+    ArrowLeftIcon,
+    ArrowRightIcon,
+} from "@heroicons/react/24/outline";
 import { copyLinkFun } from "@/lib/utils";
 import { useState, useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/SplitText";
 import Image from "next/image";
+import { usePathname, useRouter } from "next/navigation";
+import { articleRouter } from "@/lib/utils"
+import clsx from "clsx";
 
 gsap.registerPlugin(useGSAP, SplitText);
 
@@ -16,6 +23,8 @@ function randomInt(min: number, max: number) {
 }
 
 export default function MobileButtonArea() {
+    const pathname = usePathname();
+    const router = useRouter();
 
     const container = useRef<HTMLDivElement | null>(null);
     const textRef = useRef<HTMLDivElement | null>(null);
@@ -97,8 +106,33 @@ export default function MobileButtonArea() {
 
     });
 
+    let articleIndex = articleRouter.indexOf(pathname);
+
+    const leftClickFun = () => {
+        let index = articleRouter.indexOf(pathname);
+        if (index < 0) return;
+        if (index === 0) {
+            toast.error('目前是第一篇文章');
+        } else {
+            let url = articleRouter[index - 1];
+            router.push(url);
+        }
+    }
+
+    const rightClickFun = () => {
+        let index = articleRouter.indexOf(pathname);
+        if (index > articleRouter.length - 1) return;
+        if (index === articleRouter.length - 1) {
+            toast.error('目前是最后一篇文章');
+        } else {
+            let url = articleRouter[index + 1];
+            router.push(url);
+        }
+    }
+
     return (
         <div className="w-full flex items-center justify-between" ref={container}>
+            <ArrowLeftIcon onClick={leftClickFun} className={clsx("size-7 b:size-7 b:hover:scale-110 transition", articleIndex !== 0 ? "text-text1 cursor-pointer" : "text-gray-300 dark:text-gray-600")} />
             <div onClick={animateFun}
                 className="text-red-500 text-2xl b:text-3xl cursor-pointer
                      animate-pulse
@@ -117,6 +151,7 @@ export default function MobileButtonArea() {
             </div>
 
             <LinkIcon onClick={copyLinkFun} className="size-7 b:size-7 b:hover:scale-110 transition text-maincolor dark:text-foreground cursor-pointer" />
+            <ArrowRightIcon onClick={rightClickFun} className={clsx("size-7 b:size-7 b:hover:scale-110 transition", articleIndex !== articleRouter.length - 1 ? "text-text3 cursor-pointer" : "text-gray-300 dark:text-gray-600")} />
             <div className="popup-text-mobile" ref={textRef}>
                 曝光老赖<br />
                 人人有责

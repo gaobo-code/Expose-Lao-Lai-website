@@ -3,6 +3,8 @@ import { twMerge } from "tailwind-merge"
 import { MouseEventHandler } from "react";
 import { toast } from "sonner"
 
+export const articleRouter = ["/article/chuzhong", "/article/hengyuan", "/article/laolai", "/article/ma", "/article/fuchong", "/article/jiangxue", "/article/heike", "/article/hairen", "/article/jiaofeng", "/article/ouji"];
+
 const digitMap = ["&#9312;","&#9313;","&#9314;","&#9315;","&#9316;","&#9317;","&#9318;","&#9319;"];
 
 export function cn(...inputs: ClassValue[]) {

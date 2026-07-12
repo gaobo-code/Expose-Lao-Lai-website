@@ -46,12 +46,12 @@ export default function ArticleLayoutShell({ children }: Props) {
           </div>
         </div>
         <div className="hidden b:block">
-          <div className="w-32 md:w-26">
+          <div className="w-64 md:w-58">
             <DesktopButtonArea></DesktopButtonArea>
           </div>
         </div>
         <div className="block b:hidden">
-          <div className="w-32 md:w-26">
+          <div className="w-64 md:w-58">
             <MobileButtonArea></MobileButtonArea>
           </div>
         </div>

@@ -8,6 +8,14 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/SplitText";
 import Image from "next/image";
+import {
+    ArrowLeftIcon,
+    ArrowRightIcon,
+} from "@heroicons/react/24/outline";
+import { usePathname, useRouter } from "next/navigation";
+import { articleRouter } from "@/lib/utils"
+import clsx from "clsx";
+import { toast } from "sonner"
 
 gsap.registerPlugin(useGSAP, SplitText);
 
@@ -19,6 +27,9 @@ export default function ButtonArea() {
     const [openindex, setOpenIndex] = useState(0);
     const container = useRef<HTMLDivElement | null>(null);
     const textRef = useRef<HTMLDivElement | null>(null);
+
+    const pathname = usePathname();
+    const router = useRouter();
 
     const { contextSafe } = useGSAP({ scope: container });
 
@@ -80,8 +91,47 @@ export default function ButtonArea() {
 
     });
 
+    let articleIndex = articleRouter.indexOf(pathname);
+
+    const leftClickFun = () => {
+        let index = articleRouter.indexOf(pathname);
+        if (index < 0) return;
+        if (index === 0) {
+            toast.error('目前是第一篇文章');
+        } else {
+            let url = articleRouter[index - 1];
+            router.push(url);
+        }
+    }
+
+    const rightClickFun = () => {
+        let index = articleRouter.indexOf(pathname);
+        if (index > articleRouter.length - 1) return;
+        if (index === articleRouter.length - 1) {
+            toast.error('目前是最后一篇文章');
+        } else {
+            let url = articleRouter[index + 1];
+            router.push(url);
+        }
+    }
+
     return (
         <div className="w-full flex items-center justify-between" ref={container}>
+            <HoverCard openDelay={300} open={openindex === -1} onOpenChange={(open) => {
+                if (open) {
+                    setOpenIndex(-1);
+                }
+
+            }}>
+                <HoverCardTrigger>
+                    <ArrowLeftIcon onClick={leftClickFun} className={clsx("size-7 b:size-7 b:hover:scale-110 transition", articleIndex !== 0 ? "text-text1 cursor-pointer" : "text-gray-300 dark:text-gray-600")} />
+                </HoverCardTrigger>
+
+                <HoverCardContent side="top" align="start" sideOffset={9} alignOffset={-30} className="hover-card-content w-22 h-9">
+                    <div>上一篇文章</div>
+                </HoverCardContent>
+            </HoverCard>
+
             <HoverCard openDelay={300} open={openindex === 0} onOpenChange={(open) => {
                 if (open) {
                     setOpenIndex(0);
@@ -101,7 +151,7 @@ export default function ButtonArea() {
                             width={30}
                             height={30}
                             className=""
-                          
+
                         />
 
                     </div>
@@ -125,6 +175,21 @@ export default function ButtonArea() {
 
                 <HoverCardContent side="top" align="start" sideOffset={9} alignOffset={-30} className="hover-card-content w-22 h-9">
                     <div>复制链接</div>
+                </HoverCardContent>
+            </HoverCard>
+
+            <HoverCard openDelay={300} open={openindex === 2} onOpenChange={(open) => {
+                if (open) {
+                    setOpenIndex(2);
+                }
+
+            }}>
+                <HoverCardTrigger>
+                    <ArrowRightIcon onClick={rightClickFun} className={clsx("size-7 b:size-7 b:hover:scale-110 transition", articleIndex !== articleRouter.length - 1 ? "text-text3 cursor-pointer" : "text-gray-300 dark:text-gray-600")} />
+                </HoverCardTrigger>
+
+                <HoverCardContent side="top" align="start" sideOffset={9} alignOffset={-30} className="hover-card-content w-22 h-9">
+                    <div>下一篇文章</div>
                 </HoverCardContent>
             </HoverCard>
 
