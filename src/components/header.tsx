@@ -41,7 +41,7 @@ const Header = () => {
 
   // menu in desktop
   const deskRightBar = (
-    <div className="h-full space-x-2 b:mr-[15%] lg:mr-[20%] xl:mr-[25%] hidden b:block">
+    <div className="h-full space-x-2 b:mr-[5%] lg:mr-[10%] xl:mr-[20%] 2xl:mr-[25%] hidden b:block">
       {menu.map((item) => (
         <Link href={item.link} aria-label={item.title} key={item.link}>
           <button
