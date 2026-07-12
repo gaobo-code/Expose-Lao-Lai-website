@@ -35,13 +35,3 @@ export function getAllPosts(): Post[] {
     });
   return posts;
 }
-
-export function getPostTitleMap() {
-  const posts = getAllPosts();
-  const titleMap = new Map<string, string>();
-  posts.forEach((post) => {
-    titleMap.set(post.slug, post.title);
-  });
-
-  return titleMap;
-}

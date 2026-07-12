@@ -2,10 +2,8 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "幽默现实漫画",
-  robots:{
-    index:false,
-    follow:false
-  },
+  description: "老赖王思宇，轻松一刻，在笑声中看清套路。",
+  keywords: ["老赖", "王思宇", "沈阳", "软件开发", "沈阳衡源网络科技", "辽宁志在远方网络科技", "大连火石致远科技", "拖欠工资", "骗取项目定金"],
   alternates: {
     canonical: "https://llwsydgs.com/comic"
   },

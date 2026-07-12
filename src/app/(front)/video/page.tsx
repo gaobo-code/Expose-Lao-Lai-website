@@ -1,16 +1,14 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "老赖王思宇的故事",
+  title: "老赖王思宇的视频",
+  description: "王思宇是一个沈阳软件行业中的骗子，无恶不作，与他合作过的客户录制了视频，谴责他的行为。",
+  keywords: ["沈阳衡源网络科技", "辽宁志在远方网络科技", "大连火石致远科技", "王思宇"],
   alternates: {
     canonical: "https://llwsydgs.com/video"
   },
   openGraph: {
     url: "https://llwsydgs.com/video",
-  },
-  robots:{
-    index:false,
-    follow:false
   }
 };
 

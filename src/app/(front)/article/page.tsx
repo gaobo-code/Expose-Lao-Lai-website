@@ -3,16 +3,14 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "老赖王思宇的故事",
+  title: "老赖王思宇的文章",
+  description: "王思宇是一个沈阳软件行业中的老板，骗取项目定金，严重拖欠工资，他的公司包括辽宁志在远方网络科技，大连火石致远科技，沈阳衡源网络科技。",
+  keywords: ["沈阳衡源网络科技", "辽宁志在远方网络科技", "大连火石致远科技"],
   alternates: {
     canonical: "https://llwsydgs.com/article"
   },
   openGraph: {
     url: "https://llwsydgs.com/article",
-  },
-  robots:{
-    index:false,
-    follow:true,
   }
 };
 

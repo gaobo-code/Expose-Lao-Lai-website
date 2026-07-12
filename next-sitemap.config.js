@@ -4,11 +4,7 @@ module.exports = {
   generateRobotsTxt: true,  // Generates robots.txt file (optional)
   sitemapSize: 500,  // Max number of URLs per sitemap file
   exclude: [
-    '/article',
-    '/comic',
     '/comment',
-    '/image',
-    '/video',
     '/manifest.json',
     '/icon.png',
     '/icon0.svg',
