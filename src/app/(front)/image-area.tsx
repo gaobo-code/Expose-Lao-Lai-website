@@ -31,7 +31,7 @@ type imageProps = {
 
 export const imageData = [
   {
-    url: "/qianxin1.webp",
+    url: "/media/qianxin1.webp",
     title: "老赖王思宇在法院的欠钱记录第一份",
     description:
       "在2023年4月的法庭上，王思宇宣称公司 (辽宁志在远方网络科技) 破产，资不抵债，实际上就是恶意欠钱。从这三份法院的欠钱记录来看，从2023年到2025年期间，依然不断的有员工和客户在起诉他，强制执行他，这证明他的公司一直在运营，而不是破产。",
@@ -39,7 +39,7 @@ export const imageData = [
     height: 426,
   },
   {
-    url: "/qianxin2.webp",
+    url: "/media/qianxin2.webp",
     title: "老赖王思宇在法院的欠钱记录第二份",
     description:
       "王思宇的公司，辽宁志在远方网络科技，大约有一半员工，跟他关系不好的，没有发放工资，所以到法院和劳动局起诉他，另一半员工，跟他关系好的，工资已全部发放，以备公司换壳之后使用，这完全就是恶意欠薪。",
@@ -47,7 +47,7 @@ export const imageData = [
     height: 429,
   },
   {
-    url: "/qianxin3.webp",
+    url: "/media/qianxin3.webp",
     title: "老赖王思宇在法院的欠钱记录第三份",
     description:
       "这些执行案件，大部分是员工申请，小部分是客户申请，因为王思宇善于钻法律的空子，大多数客户拿不到关键证据，在法庭诉讼阶段没有成功，没有到达执行阶段。",
@@ -55,7 +55,7 @@ export const imageData = [
     height: 425,
   },
   {
-    url: "/qianxin4.webp",
+    url: "/media/qianxin4.webp",
     title: "王思宇当老赖的记录",
     description:
       "这是王思宇成为老赖的记录，愤怒的员工见公司执行不到钱，又强制执行他个人，但可惜王思宇早已将财产全部转移，员工扑了个空，他真的是给这些员工好好上了一课。",

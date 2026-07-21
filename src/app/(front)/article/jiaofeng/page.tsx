@@ -16,7 +16,7 @@ type EmblaCarouselProps = {
 
 export const imageData = [
   {
-    url: "/heike11.webp",
+    url: "/media/heike11.webp",
     title: "黑客第十一张图片",
     description:
       "",
@@ -24,7 +24,7 @@ export const imageData = [
     height: 842,
   },
   {
-    url: "/heike12.webp",
+    url: "/media/heike12.webp",
     title: "黑客第十二张图片",
     description:
       "",
@@ -32,7 +32,7 @@ export const imageData = [
     height: 691,
   },
   {
-    url: "/heike13.webp",
+    url: "/media/heike13.webp",
     title: "黑客第十三张图片",
     description:
       "",
@@ -40,7 +40,7 @@ export const imageData = [
     height: 1106,
   },
   {
-    url: "/heike14.webp",
+    url: "/media/heike14.webp",
     title: "黑客第十四张图片",
     description:
       "",
@@ -98,7 +98,7 @@ export default function Jiaofeng() {
   };
 
   return (
-    <>
+    <article>
       <PostHeader title="与黑客的第二次交锋" />
       <div className="mx-auto text-[19px]">
         <p className="my-4 break-all justify-cjk">
@@ -187,6 +187,6 @@ export default function Jiaofeng() {
         imageIndex={imageIndex}
         setIsMobileOpen={setIsMobileOpen}
       ></EmblaCarouselCom>
-    </>
+    </article>
   );
 }

@@ -121,7 +121,7 @@ const Header = () => {
     <header className="fixed w-screen h-14 b:h-17 bg-headerbackground flex items-center justify-between z-10 normal-font">
       <div className="flex items-center ml-[3%]">
         <Image
-          src="/logo.webp"
+          src="/media/logo.webp"
           alt="网站logo"
           width={50}
           height={50}
@@ -129,7 +129,7 @@ const Header = () => {
           className="hidden b:block"
         />
         <Image
-          src="/logo.webp"
+          src="/media/logo.webp"
           alt="网站logo"
           width={40}
           height={40}

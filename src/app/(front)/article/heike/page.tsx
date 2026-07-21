@@ -16,7 +16,7 @@ type EmblaCarouselProps = {
 
 export const imageData = [
   {
-    url: "/heike1.webp",
+    url: "/media/heike1.webp",
     title: "黑客第一张图片",
     description:
       "",
@@ -24,7 +24,7 @@ export const imageData = [
     height: 672,
   },
   {
-    url: "/heike2.webp",
+    url: "/media/heike2.webp",
     title: "黑客第二张图片",
     description:
       "",
@@ -32,7 +32,7 @@ export const imageData = [
     height: 673,
   },
   {
-    url: "/heike3.webp",
+    url: "/media/heike3.webp",
     title: "黑客第三张图片",
     description:
       "",
@@ -40,7 +40,7 @@ export const imageData = [
     height: 672,
   },
   {
-    url: "/heike4.webp",
+    url: "/media/heike4.webp",
     title: "黑客第四张图片",
     description:
       "",
@@ -48,7 +48,7 @@ export const imageData = [
     height: 674,
   },
   {
-    url: "/heike5.webp",
+    url: "/media/heike5.webp",
     title: "黑客第五张图片",
     description:
       "",
@@ -56,7 +56,7 @@ export const imageData = [
     height: 706,
   },
   {
-    url: "/heike6.webp",
+    url: "/media/heike6.webp",
     title: "黑客第六张图片",
     description:
       "",
@@ -64,7 +64,7 @@ export const imageData = [
     height: 654,
   },
   {
-    url: "/heike7.webp",
+    url: "/media/heike7.webp",
     title: "黑客第七张图片",
     description:
       "",
@@ -72,7 +72,7 @@ export const imageData = [
     height: 396,
   },
   {
-    url: "/heike8.webp",
+    url: "/media/heike8.webp",
     title: "黑客第八张图片",
     description:
       "",
@@ -80,7 +80,7 @@ export const imageData = [
     height: 335,
   },
   {
-    url: "/heike9.webp",
+    url: "/media/heike9.webp",
     title: "黑客第九张图片",
     description:
       "",
@@ -88,7 +88,7 @@ export const imageData = [
     height: 323,
   },
   {
-    url: "/heike10.webp",
+    url: "/media/heike10.webp",
     title: "黑客第十张图片",
     description:
       "",
@@ -146,7 +146,7 @@ export default function Heike() {
   };
 
   return (
-    <>
+    <article>
       <PostHeader title="王思宇派黑客奇袭我网站服务器全程" />
       <div className="mx-auto text-[19px]">
         <h3 className="mt-8 mb-4 break-all text-[21px] font-bold md:text-[25px]">
@@ -307,6 +307,6 @@ export default function Heike() {
         imageIndex={imageIndex}
         setIsMobileOpen={setIsMobileOpen}
       ></EmblaCarouselCom>
-    </>
+    </article>
   );
 }

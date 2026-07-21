@@ -16,7 +16,7 @@ type EmblaCarouselProps = {
 
 export const imageData = [
   {
-    url: "/ouji1.webp",
+    url: "/media/ouji1.webp",
     title: "偶寄第一张图片",
     description:
       "",
@@ -24,7 +24,7 @@ export const imageData = [
     height: 1000,
   },
   {
-    url: "/ouji2.webp",
+    url: "/media/ouji2.webp",
     title: "偶寄第二张图片",
     description:
       "",
@@ -32,7 +32,7 @@ export const imageData = [
     height: 1000,
   },
   {
-    url: "/ouji3.webp",
+    url: "/media/ouji3.webp",
     title: "偶寄第三张图片",
     description:
       "",
@@ -40,7 +40,7 @@ export const imageData = [
     height: 1000,
   },
   {
-    url: "/ouji4.webp",
+    url: "/media/ouji4.webp",
     title: "偶寄第四张图片",
     description:
       "",
@@ -48,7 +48,7 @@ export const imageData = [
     height: 1000,
   },
   {
-    url: "/ouji5.webp",
+    url: "/media/ouji5.webp",
     title: "偶寄第五张图片",
     description:
       "",
@@ -56,7 +56,7 @@ export const imageData = [
     height: 1000,
   },
   {
-    url: "/ouji6.webp",
+    url: "/media/ouji6.webp",
     title: "偶寄第六张图片",
     description:
       "",
@@ -64,7 +64,7 @@ export const imageData = [
     height: 1000,
   },
   {
-    url: "/ouji7.webp",
+    url: "/media/ouji7.webp",
     title: "偶寄第七张图片",
     description:
       "",
@@ -72,7 +72,7 @@ export const imageData = [
     height: 1000,
   },
   {
-    url: "/ouji8.webp",
+    url: "/media/ouji8.webp",
     title: "偶寄第八张图片",
     description:
       "",
@@ -80,7 +80,7 @@ export const imageData = [
     height: 1000,
   },
   {
-    url: "/ouji9.webp",
+    url: "/media/ouji9.webp",
     title: "偶寄第九张图片",
     description:
       "",
@@ -88,7 +88,7 @@ export const imageData = [
     height: 1000,
   },
   {
-    url: "/ouji10.webp",
+    url: "/media/ouji10.webp",
     title: "偶寄第十张图片",
     description:
       "",
@@ -96,7 +96,7 @@ export const imageData = [
     height: 1000,
   },
   {
-    url: "/ouji11.webp",
+    url: "/media/ouji11.webp",
     title: "偶寄第十一张图片",
     description:
       "",
@@ -104,7 +104,7 @@ export const imageData = [
     height: 1000,
   },
   {
-    url: "/ouji12.webp",
+    url: "/media/ouji12.webp",
     title: "偶寄第十二张图片",
     description:
       "",
@@ -112,7 +112,7 @@ export const imageData = [
     height: 1000,
   },
   {
-    url: "/ouji13.webp",
+    url: "/media/ouji13.webp",
     title: "偶寄第十三张图片",
     description:
       "",
@@ -120,7 +120,7 @@ export const imageData = [
     height: 1000,
   },
   {
-    url: "/ouji14.webp",
+    url: "/media/ouji14.webp",
     title: "偶寄第十四张图片",
     description:
       "",
@@ -128,7 +128,7 @@ export const imageData = [
     height: 1000,
   },
   {
-    url: "/ouji15.webp",
+    url: "/media/ouji15.webp",
     title: "偶寄第十五张图片",
     description:
       "",
@@ -136,7 +136,7 @@ export const imageData = [
     height: 1000,
   },
   {
-    url: "/ouji16.webp",
+    url: "/media/ouji16.webp",
     title: "偶寄第十六张图片",
     description:
       "",
@@ -144,7 +144,7 @@ export const imageData = [
     height: 1000,
   },
   {
-    url: "/ouji17.webp",
+    url: "/media/ouji17.webp",
     title: "偶寄第十七张图片",
     description:
       "",
@@ -152,7 +152,7 @@ export const imageData = [
     height: 1000,
   },
   {
-    url: "/ouji18.webp",
+    url: "/media/ouji18.webp",
     title: "偶寄第十八张图片",
     description:
       "",
@@ -160,7 +160,7 @@ export const imageData = [
     height: 1000,
   },
   {
-    url: "/ouji19.webp",
+    url: "/media/ouji19.webp",
     title: "偶寄第十九张图片",
     description:
       "",
@@ -168,7 +168,7 @@ export const imageData = [
     height: 1000,
   },
   {
-    url: "/ouji20.webp",
+    url: "/media/ouji20.webp",
     title: "偶寄第二十张图片",
     description:
       "",
@@ -176,7 +176,7 @@ export const imageData = [
     height: 1000,
   },
   {
-    url: "/ouji21.webp",
+    url: "/media/ouji21.webp",
     title: "偶寄第二十一张图片",
     description:
       "",
@@ -184,7 +184,7 @@ export const imageData = [
     height: 1000,
   },
   {
-    url: "/ouji22.webp",
+    url: "/media/ouji22.webp",
     title: "偶寄第二十二张图片",
     description:
       "",
@@ -242,7 +242,7 @@ export default function Ouji() {
   };
 
   return (
-    <>
+    <article>
       <PostHeader title="骗子偶寄和其小号" />
       <div className="mx-auto text-[19px]">
         <p className="my-4 break-all justify-cjk">
@@ -473,6 +473,6 @@ export default function Ouji() {
         imageIndex={imageIndex}
         setIsMobileOpen={setIsMobileOpen}
       ></EmblaCarouselCom>
-    </>
+    </article>
   );
 }

@@ -5,4 +5,7 @@ export type Post = {
   keywords: string;
   excerpt: string;
   content: string;
+  publishedAt?: string;
+  modifiedAt?: string;
+  image?: string;
 };

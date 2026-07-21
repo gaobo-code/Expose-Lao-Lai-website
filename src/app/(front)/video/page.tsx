@@ -21,8 +21,8 @@ export default function Video() {
             className="rounded-xl xl:shadow-lg max-h-full w-[500px] h-[882px]"
             width={500}
             height={882}
-            // src="/mata.mp4"
-            poster="/mata-placeholder.webp"
+            // src="/media/mata.mp4"
+            poster="/media/mata-placeholder.webp"
             controls
             autoPlay
             muted
@@ -30,7 +30,7 @@ export default function Video() {
             playsInline
 
           >
-            <source src="/mata.mp4" type="video/mp4" />
+            <source src="/media/mata.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
           <div className="text-[0] leading-[2.1] pl-12 box-border line-clamp-20 hidden xl:block justify-cjk">

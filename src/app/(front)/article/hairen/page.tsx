@@ -16,7 +16,7 @@ type EmblaCarouselProps = {
 
 export const imageData = [
   {
-    url: "/hairen1.webp",
+    url: "/media/hairen1.webp",
     title: "骇人言论第一张图片",
     description:
       "",
@@ -24,7 +24,7 @@ export const imageData = [
     height: 1106,
   },
   {
-    url: "/hairen2.webp",
+    url: "/media/hairen2.webp",
     title: "骇人言论第二张图片",
     description:
       "",
@@ -32,7 +32,7 @@ export const imageData = [
     height: 1106,
   },
   {
-    url: "/hairen3.webp",
+    url: "/media/hairen3.webp",
     title: "骇人言论第三张图片",
     description:
       "",
@@ -40,7 +40,7 @@ export const imageData = [
     height: 1106,
   },
   {
-    url: "/hairen4.webp",
+    url: "/media/hairen4.webp",
     title: "骇人言论第四张图片",
     description:
       "",
@@ -98,7 +98,7 @@ export default function Hairen() {
   };
 
   return (
-    <>
+    <article>
       <PostHeader title="QQ群的骇人言论" />
       <div className="mx-auto text-[19px]">
         <p className="my-4 break-all justify-cjk">
@@ -171,6 +171,6 @@ export default function Hairen() {
         imageIndex={imageIndex}
         setIsMobileOpen={setIsMobileOpen}
       ></EmblaCarouselCom>
-    </>
+    </article>
   );
 }

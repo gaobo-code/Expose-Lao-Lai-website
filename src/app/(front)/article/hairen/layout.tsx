@@ -5,6 +5,7 @@ import ArticleJsonLd from "@/components/article-json-ld";
 export const metadata: Metadata = {
   title: "QQ群的骇人言论",
   description: "有人在QQ群中说，曾经去缅北参加了培训，新学了一招，叫水牢，就是把人困在水里，然后放电，全方位的电。",
+  authors: [{ name: "高勃" }],
   keywords: [
     "缅北",
     "水牢",
@@ -23,6 +24,9 @@ export const metadata: Metadata = {
     url: "https://llwsydgs.com/article/hairen",
     siteName: "老赖王思宇的故事",
     locale: "zh-CN",
+    publishedTime: "2026-02-04",
+    modifiedTime: "2026-07-08",
+    authors: ["高勃"],
     type: "article",
     images: [
       {
@@ -50,6 +54,9 @@ export default function HairenLayout({
     <ArticleJsonLd
       title={metadata.title as string}
       description={metadata.description as string}
+      authorName="高勃"
+      datePublished="2026-02-04"
+      dateModified="2026-07-08"
       path="https://llwsydgs.com/article/hairen"
     />
     <ArticleLayoutShell>{children}</ArticleLayoutShell>

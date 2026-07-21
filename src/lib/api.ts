@@ -13,8 +13,17 @@ export function getPostSlugs() {
 
 export function getPostBySlug(slug: string) {
   const realSlug = slug.replace(/\.md$/, "");
+  if (!/^[a-z0-9-]+$/.test(realSlug)) {
+    return null;
+  }
+
   const fullPath = join(postsDirectory, `${realSlug}.md`);
+  if (!fs.existsSync(fullPath)) {
+    return null;
+  }
   const fileContents = fs.readFileSync(fullPath, "utf8");
+
+
   const { data, content } = matter(fileContents);
   
   return { ...data, slug: realSlug, content } as Post;
@@ -24,6 +33,7 @@ export function getAllPosts(): Post[] {
   const slugs = getPostSlugs();
   const posts = slugs
     .map((slug) => getPostBySlug(slug))
+    .filter((post): post is Post => post !== null)
     .sort((post1, post2) => {
       const post1Order = slugOrder.indexOf(post1.slug);
       const post2Order = slugOrder.indexOf(post2.slug);

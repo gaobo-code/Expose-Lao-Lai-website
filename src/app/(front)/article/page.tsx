@@ -47,9 +47,9 @@ export default function Article() {
           {allPosts.map((post) => (
             <Link href={`/article/${post.slug}`} key={post.slug}>
               <section className="flex flex-col p-4 b:px-6 box-border shadow-[0_6px_16px_rgba(24,39,75,0.05),0_1px_4px_rgba(24,39,75,0.04)] b:hover:shadow-[0_10px_22px_rgba(24,39,75,0.08),0_3px_8px_rgba(24,39,75,0.05)] dark:shadow-[0_6px_16px_rgba(0,0,0,0.16),inset_0_1px_0_rgba(255,255,255,0.03)] dark:b:hover:shadow-[0_10px_22px_rgba(0,0,0,0.24),inset_0_1px_0_rgba(255,255,255,0.05)] rounded-lg bg-articlebackground h-48 cursor-pointer b:hover:translate-y-[-4px] transition-transform duration-400 ease-out border border-[#EEF1F4] b:hover:border-[#D9E7F2] dark:border-[#3F4754] dark:b:hover:border-[#566170]">
-                <div className="border-b border-b-gray-300 text-xl b:text-[22px] leading-[1.3] font-semibold pb-1.5 b:hover:text-secondmaincolor dark:b:hover:text-maincolor transition-all duration-400 ease-out truncate">
+                <h2 className="border-b border-b-gray-300 text-xl b:text-[22px] leading-[1.3] font-semibold pb-1.5 b:hover:text-secondmaincolor dark:b:hover:text-maincolor transition-all duration-400 ease-out truncate">
                   {post.title}
-                </div>
+                </h2>
                 <div className="text-base b:text-[17px] leading-[1.4] pt-2.5 line-clamp-5 break-all justify-cjk">
                   {post.excerpt}
                 </div>
@@ -60,9 +60,9 @@ export default function Article() {
           {otherArray.map((post) => (
             <Link href={`/article/${post.key}`} key={post.key}>
               <section className="flex flex-col p-4 b:px-6 box-border shadow-[0_6px_16px_rgba(24,39,75,0.05),0_1px_4px_rgba(24,39,75,0.04)] b:hover:shadow-[0_10px_22px_rgba(24,39,75,0.08),0_3px_8px_rgba(24,39,75,0.05)] dark:shadow-[0_6px_16px_rgba(0,0,0,0.16),inset_0_1px_0_rgba(255,255,255,0.03)] dark:b:hover:shadow-[0_10px_22px_rgba(0,0,0,0.24),inset_0_1px_0_rgba(255,255,255,0.05)] rounded-lg bg-articlebackground h-48 cursor-pointer b:hover:translate-y-[-4px] transition-transform duration-400 ease-out border border-[#EEF1F4] b:hover:border-[#D9E7F2] dark:border-[#3F4754] dark:b:hover:border-[#566170]">
-                <div className="border-b border-b-gray-300 text-xl b:text-[22px] leading-[1.3] font-semibold pb-1.5 b:hover:text-secondmaincolor dark:b:hover:text-maincolor transition-all duration-400 ease-out truncate">
+                <h2 className="border-b border-b-gray-300 text-xl b:text-[22px] leading-[1.3] font-semibold pb-1.5 b:hover:text-secondmaincolor dark:b:hover:text-maincolor transition-all duration-400 ease-out truncate">
                   {post.title}
-                </div>
+                </h2>
                 <div className="text-base b:text-[17px] leading-[1.4] pt-2.5 line-clamp-5 break-all justify-cjk">
                   {post.desc}
                 </div>

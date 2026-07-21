@@ -14,12 +14,16 @@ export const metadata: Metadata = {
   },
   robots:{
     index:false,
-    follow:false
+    follow:false,
+    googleBot: {
+      index: false,
+      follow: false,
+    }
   }
 };
 
 function getImageUrl(id: number) {
-  return `/avatar${(id % 14 + 1)}.webp`;
+  return `/media/avatar${(id % 14 + 1)}.webp`;
 }
 
 export default function Comment() {

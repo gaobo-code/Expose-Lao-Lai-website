@@ -112,7 +112,7 @@ export default function MobileButtonArea() {
         let index = articleRouter.indexOf(pathname);
         if (index < 0) return;
         if (index === 0) {
-            toast.error('目前是第一篇文章');
+            toast.error('目前已是第一篇文章');
         } else {
             let url = articleRouter[index - 1];
             router.push(url);
@@ -123,7 +123,7 @@ export default function MobileButtonArea() {
         let index = articleRouter.indexOf(pathname);
         if (index > articleRouter.length - 1) return;
         if (index === articleRouter.length - 1) {
-            toast.error('目前是最后一篇文章');
+            toast.error('目前已是最后一篇文章');
         } else {
             let url = articleRouter[index + 1];
             router.push(url);
@@ -140,7 +140,7 @@ export default function MobileButtonArea() {
                      hover:scale-110 transition flex items-center justify-center"
             >
                 <Image
-                    src="/heart.png"
+                    src="/media/heart.png"
                     alt="红心"
                     width={29}
                     height={29}

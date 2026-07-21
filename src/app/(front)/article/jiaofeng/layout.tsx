@@ -5,6 +5,7 @@ import ArticleJsonLd from "@/components/article-json-ld";
 export const metadata: Metadata = {
   title: "与黑客的第二次交锋",
   description: "在与黑客第一次交锋胜利后，网站稳定运行了一个多月，王思宇团队不甘心，又想出了一个计策，迫使我与黑客进行了第二次交锋, 黑客亮出了他的杀手锏。",
+  authors: [{ name: "高勃" }],
   keywords: [
     "黑客",
     "攻击服务器",
@@ -22,6 +23,9 @@ export const metadata: Metadata = {
     url: "https://llwsydgs.com/article/jiaofeng",
     siteName: "老赖王思宇的故事",
     locale: "zh-CN",
+    publishedTime: "2026-05-10",
+    modifiedTime: "2026-07-08",
+    authors: ["高勃"],
     type: "article",
     images: [
       {
@@ -49,6 +53,9 @@ export default function JiaofengLayout({
     <ArticleJsonLd
       title={metadata.title as string}
       description={metadata.description as string}
+      authorName="高勃"
+      datePublished="2026-05-10"
+      dateModified="2026-07-08"
       path="https://llwsydgs.com/article/jiaofeng"
     />
     <ArticleLayoutShell>{children}</ArticleLayoutShell>

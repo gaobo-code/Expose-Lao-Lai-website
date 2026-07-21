@@ -46,7 +46,7 @@ export default function Home() {
           <div className="b:flex-5 @container mb-8 b:mb-0">
             <div className="b:ml-[4%] b:mr-[5%] b:h-full @a:rounded-[10px] @a:border-[12px] @a:border-solid @a:border-[#f2f2f2] dark:@a:border-[#303641]">
               <Image
-                src="/wangsiyu.webp"
+                src="/media/wangsiyu.webp"
                 alt="老赖王思宇年轻时的照片"
                 className="m-auto"
                 width={370}
