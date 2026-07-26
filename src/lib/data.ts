@@ -99,7 +99,7 @@ export const groupData = [
       groupownernumber: '3046728167'
     },
     {
-      groupname: 'Next.js接单社区',
+      groupname: 'Next.js技术社区',
       groupnumber: '743406855',
       groupowner: '王的杀手',
       groupownernumber: '3046728167'
