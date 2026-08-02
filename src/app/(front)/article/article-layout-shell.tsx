@@ -1,5 +1,4 @@
 import { LightBulbIcon } from "@heroicons/react/24/outline";
-import { Suspense } from "react";
 import ArticleWrapper from "./article-wrapper";
 import DesktopButtonArea from "./desktop-button-area";
 import DesktopGroupArea from "./desktop-group-area";
@@ -27,15 +26,11 @@ export default function ArticleLayoutShell({ children }: Props) {
       </article>
 
       <div className="relative z-10 hidden b:block">
-        <Suspense fallback={<div className="w-full xl:w-320 h-24"></div>}>
-          <DesktopGroupArea></DesktopGroupArea>
-        </Suspense>
+        <DesktopGroupArea></DesktopGroupArea>
       </div>
 
       <div className="relative z-10 block b:hidden">
-        <Suspense fallback={<div className="w-full xl:w-320 h-45"></div>}>
-          <MobileGroupArea></MobileGroupArea>
-        </Suspense>
+        <MobileGroupArea></MobileGroupArea>
       </div>
 
       <section className="relative z-10 w-full xl:w-320 h-13 b:h-14 flex items-center justify-around bg-articlebackground mb-3 b:mb-5 b:rounded-[28px] b:shadow-[0_7px_18px_rgba(24,39,75,0.05),0_2px_6px_rgba(24,39,75,0.035)] dark:b:shadow-[0_7px_18px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.03)] b:border b:border-[#F1F3F5] dark:b:border-[#424A58]">

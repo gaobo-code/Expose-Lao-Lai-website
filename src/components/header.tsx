@@ -33,6 +33,10 @@ const menu = [
   {
     title: "评论",
     link: "/comment"
+  },
+  {
+    title: "其他",
+    link: "/all"
   }
 ];
 
@@ -41,7 +45,7 @@ const Header = () => {
 
   // menu in desktop
   const deskRightBar = (
-    <div className="h-full space-x-2 b:mr-[5%] lg:mr-[10%] xl:mr-[20%] 2xl:mr-[25%] hidden b:block">
+    <div className="h-full space-x-2 b:mr-[2%] lg:mr-[4%] xl:mr-[10%] 2xl:mr-[20%] hidden b:block">
       {menu.map((item) => (
         <Link href={item.link} aria-label={item.title} key={item.link}>
           <button

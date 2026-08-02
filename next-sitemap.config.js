@@ -5,6 +5,8 @@ module.exports = {
   sitemapSize: 500,  // Max number of URLs per sitemap file
   exclude: [
     '/comment',
+    '/all',
+    '/all/*',
     '/manifest.json',
     '/icon.png',
     '/icon0.svg',

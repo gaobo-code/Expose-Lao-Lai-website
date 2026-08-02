@@ -246,7 +246,7 @@ export default function Ouji() {
       <PostHeader title="骗子偶寄和其小号" />
       <div className="mx-auto text-[19px]">
         <p className="my-4 break-all justify-cjk">
-          偶寄（3788759585）这个人就多说了，大多数何其合作过的都知道嘴臭，爱跑路不用多说了，大多数何其合作过的都知道嘴臭，爱跑路。
+          偶寄（3788759585）这个人就不多说了，大多数何其合作过的都知道嘴臭，爱跑路不用多说了，大多数何其合作过的都知道嘴臭，爱跑路。
         </p>
         <div className="grid grid-cols-1 b:grid-cols-3 gap-10 w-full box-border">
           <Image
@@ -465,6 +465,9 @@ export default function Ouji() {
             onClick={() => openDialogMobileFun(21)}
           />
         </div>
+        <p className="my-6 break-all justify-cjk">
+          本文是群友整理出来的。经我确认，偶寄就是王思宇，Dx就是王思宇的得力干将，原辽宁志在远方网络科技的产品部部长李德强。这些人经常像这样在QQ群中表演杀猪盘，他们控制的QQ号有上百个。
+        </p>
       </div>
 
       <EmblaCarouselCom

@@ -6,7 +6,7 @@ const ROOT = process.cwd();
 
 const SOURCE_DIRS = [
   path.resolve(ROOT, "_posts"),
-  path.resolve(ROOT, "src/app"),
+  path.resolve(ROOT, "src/app/(front)"),
   path.resolve(ROOT, "src/components"),
   path.resolve(ROOT, "src/lib"),
   path.resolve(ROOT, "src/db")

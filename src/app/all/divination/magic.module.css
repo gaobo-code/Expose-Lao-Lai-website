@@ -1,0 +1,307 @@
+.fontScope,
+.fontScope * {
+    font-family: inherit !important
+}
+
+.dust {
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    pointer-events: none;
+    opacity: .6;
+    background-image: radial-gradient(circle, #f3d88e 0 1px, transparent 1.5px), radial-gradient(circle, #83d5d7 0 1px, transparent 1.5px);
+    background-size: 113px 127px, 173px 199px;
+    background-position: 17px 23px, 73px 97px;
+    mask-image: radial-gradient(ellipse at center, #000, transparent 75%);
+    animation: drift 14s linear infinite
+}
+
+.frame {
+    position: absolute;
+    z-index: 1;
+    inset: clamp(12px, 2vw, 28px);
+    border: 1px solid rgba(201, 174, 103, .13);
+    pointer-events: none
+}
+
+.frame:before,
+.frame:after {
+    content: "✦";
+    position: absolute;
+    color: rgba(218, 190, 111, .55);
+    font-size: 10px;
+    left: 10px;
+    top: 8px
+}
+
+.frame:after {
+    left: auto;
+    top: auto;
+    right: 10px;
+    bottom: 8px
+}
+
+.ritual {
+    width: min(600px, 94vw);
+    text-align: center;
+    animation: appear .5s both
+}
+
+.ritualTitle {
+    font-size: clamp(22px, 3vh, 30px);
+    font-weight: 400;
+    color: #eee9dc;
+    letter-spacing: .12em;
+    margin-top: 22px
+}
+
+.ritualTitle span {
+    display: inline-block;
+    animation: blink 1.2s infinite
+}
+
+.ritualTitle span:nth-child(2) {
+    animation-delay: .2s
+}
+
+.ritualTitle span:nth-child(3) {
+    animation-delay: .4s
+}
+
+.ritualSub {
+    font-size: 12px;
+    color: #82a7a5;
+    letter-spacing: .22em;
+    margin-top: 7px
+}
+
+.orbStage {
+    position: relative;
+    width: clamp(210px, 34vh, 310px);
+    height: clamp(210px, 34vh, 310px);
+    margin: auto;
+    display: grid;
+    place-items: center
+}
+
+.ring,
+.ringTwo,
+.ringThree {
+    position: absolute;
+    border: 1px solid rgba(221, 192, 111, .5);
+    border-radius: 50%;
+    inset: 7%;
+    animation: spin 7s linear infinite
+}
+
+.ring:before,
+.ring:after,
+.ringTwo:before,
+.ringTwo:after {
+    content: "✦";
+    position: absolute;
+    color: #e0c477;
+    font-size: 11px;
+    filter: drop-shadow(0 0 7px #e0c477)
+}
+
+.ring:before {
+    top: -7px;
+    left: 50%
+}
+
+.ring:after {
+    bottom: -7px;
+    left: 50%
+}
+
+.ringTwo {
+    inset: 18%;
+    border-color: rgba(105, 211, 211, .43);
+    animation-direction: reverse;
+    animation-duration: 5s
+}
+
+.ringTwo:before {
+    left: -6px;
+    top: 48%;
+    color: #82d3d3
+}
+
+.ringTwo:after {
+    right: -6px;
+    top: 48%;
+    color: #82d3d3
+}
+
+.ringThree {
+    inset: 1%;
+    border-style: dashed;
+    border-color: rgba(207, 179, 104, .2);
+    animation-duration: 14s
+}
+
+.orb {
+    position: relative;
+    width: 44%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: radial-gradient(circle at 38% 32%, rgba(210, 255, 248, .95), rgba(78, 191, 196, .55) 22%, rgba(22, 72, 83, .82) 55%, rgba(4, 19, 26, .95) 76%);
+    box-shadow: inset -16px -18px 25px #02080c99, inset 8px 8px 20px #ffffff38, 0 0 22px #69d1d1b3, 0 0 70px #49bfc05c;
+    animation: pulse 2s ease-in-out infinite
+}
+
+.orb:after {
+    content: "☾";
+    color: #f2d58d;
+    font: clamp(38px, 7vh, 62px) Georgia;
+    text-shadow: 0 0 16px #f0cf7d;
+    transform: rotate(-14deg);
+    animation: float 2.3s ease-in-out infinite
+}
+
+.runes {
+    position: absolute;
+    inset: 0
+}
+
+.runes i {
+    position: absolute;
+    color: #d8bd73;
+    font-style: normal;
+    font-size: 17px;
+    text-shadow: 0 0 10px #d8bd73;
+    animation: rune 1.8s infinite
+}
+
+.runes i:nth-child(1) {
+    left: 8%;
+    top: 22%
+}
+
+.runes i:nth-child(2) {
+    right: 7%;
+    top: 24%;
+    animation-delay: .35s
+}
+
+.runes i:nth-child(3) {
+    left: 13%;
+    bottom: 18%;
+    animation-delay: .7s
+}
+
+.runes i:nth-child(4) {
+    right: 14%;
+    bottom: 17%;
+    animation-delay: 1.05s
+}
+
+.veil {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(91, 214, 215, .16), transparent 48%);
+    animation: pulse 2s ease-in-out infinite;
+    pointer-events: none
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes pulse {
+    50% {
+        transform: scale(1.06);
+        opacity: .75
+    }
+}
+
+@keyframes float {
+    50% {
+        transform: rotate(-14deg) translateY(-5px)
+    }
+}
+
+@keyframes rune {
+
+    0%,
+    100% {
+        opacity: .2;
+        transform: scale(.7)
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2)
+    }
+}
+
+@keyframes blink {
+
+    0%,
+    60%,
+    100% {
+        opacity: .2
+    }
+
+    30% {
+        opacity: 1
+    }
+}
+
+@keyframes drift {
+    to {
+        background-position: 130px 150px, 246px 296px
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        filter: blur(8px);
+        transform: scale(.92)
+    }
+}
+
+@media(max-width:640px) {
+    .frame {
+        inset: 8px
+    }
+
+    .orbStage {
+        width: 210px;
+        height: 210px
+    }
+
+    .ritualTitle {
+        margin-top: 14px;
+        font-size: 21px
+    }
+
+    .ritualSub {
+        font-size: 10px
+    }
+
+    .dust {
+        opacity: .42
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+
+    .dust,
+    .ring,
+    .ringTwo,
+    .ringThree,
+    .orb,
+    .orb:after,
+    .runes i,
+    .veil,
+    .ritual {
+        animation: none
+    }
+}

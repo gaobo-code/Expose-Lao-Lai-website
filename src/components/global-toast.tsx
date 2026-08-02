@@ -15,7 +15,7 @@ export default function GlobalToast() {
     // 只在第一次访问全站弹窗
     const hasVisited = localStorage.getItem("hasVisited");
     if (!hasVisited) {
-      toast("本网站分为首页、文章、图片、漫画、视频、评论六个板块，记载的是真人真事，我愿意为本网站的内容承担法律责任。本网站的图片和视频均取材自网络的公开数据，不涉及任何侵权。", {
+      toast("本网站分为首页、文章、图片、漫画、视频、评论、其他七个板块，记载的是真人真事，我愿意为本网站的内容承担法律责任。本网站的图片和视频均取材自网络的公开数据，不涉及任何侵权。", {
         position: "top-center",
         autoClose: 6000,
         closeOnClick: true,

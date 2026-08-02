@@ -1,0 +1,245 @@
+.game{--ink:#f7f4ec;--line:#ffffff24;--acid:#d7ff3f;--hot:#ff5964;width:100%;height:calc(100svh - 56px);min-height:0;overflow:hidden;position:relative;color:var(--ink);background:#0b0c10;padding:clamp(10px,2vw,24px)}.game:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 78% 30%,#e24f4924,transparent 27%),radial-gradient(circle at 15% 85%,#b8e6421b,transparent 30%),linear-gradient(#ffffff08 1px,transparent 1px),linear-gradient(90deg,#ffffff08 1px,transparent 1px);background-size:auto,auto,44px 44px,44px 44px}.shell{position:relative;z-index:1;width:min(1440px,100%);height:100%;margin:auto;display:grid;grid-template-rows:auto minmax(0,1fr);gap:clamp(9px,1.5vh,16px)}.topbar{display:flex;align-items:center;justify-content:space-between}.eyebrow{margin:0 0 3px;color:var(--acid);font:800 10px/1.1 ui-monospace,monospace;letter-spacing:.22em;text-transform:uppercase}.topbar h1{margin:0;color:#fff;font-size:clamp(23px,3vw,42px);line-height:1;letter-spacing:.04em}.counter{display:flex;align-items:baseline;gap:5px;padding:8px 13px;border:1px solid var(--line);background:#15171d;border-radius:12px;font-size:11px;color:#979aa5}.counter strong{color:var(--acid);font:900 24px/1 ui-monospace,monospace}.battleBar{padding:9px 13px 7px;border:1px solid var(--line);background:#14161ccb;border-radius:12px;backdrop-filter:blur(12px)}.barLabels,.ticks{display:flex;justify-content:space-between;align-items:center;font-size:9px;color:#a3a5ad}.ticks span{width:0;display:flex;justify-content:center;white-space:nowrap}.barLabels b{color:#fff;font-size:12px}.track{height:9px;margin:7px 0 3px;position:relative;border-radius:20px;background:#282b34}.trackLose,.trackWin{position:absolute;inset:0 50% 0 0;border-radius:20px 0 0 20px;background:linear-gradient(90deg,#ff3048,#802d43)}.trackWin{inset:0 0 0 50%;border-radius:0 20px 20px 0;background:linear-gradient(90deg,#596a31,var(--acid))}.marker{position:absolute;top:50%;width:19px;height:19px;border:3px solid #fff;border-radius:50%;background:#0b0c10;box-shadow:0 0 18px #fff8;transform:translate(-50%,-50%);transition:left .45s cubic-bezier(.2,1.5,.5,1)}.arena{min-height:0;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(310px,.92fr);gap:clamp(10px,1.5vw,20px)}.card,.stage{min-height:0;overflow:hidden;border:1px solid var(--line);border-radius:18px;background:#14161c}.card{padding:clamp(16px,2.5vw,38px);display:flex;flex-direction:column}.questionMeta{display:flex;justify-content:space-between;color:#777b86;font-size:11px}.questionMeta span:first-child{color:#0b0c10;background:var(--acid);border-radius:5px;padding:4px 8px;font-weight:900}.card h2{margin:clamp(12px,3vh,34px) 0 clamp(12px,2.5vh,27px);font-size:clamp(20px,2.7vw,37px);line-height:1.25;color:#fff}.options{display:grid;gap:clamp(7px,1.2vh,12px)}.options button{width:100%;min-height:clamp(48px,7vh,70px);display:flex;align-items:center;gap:14px;padding:8px 15px;border:1px solid #31343e;border-radius:11px;color:#e8e8eb;background:#1b1d24;font:700 clamp(14px,1.4vw,18px)/1.2 inherit;text-align:left;cursor:pointer;transition:.18s}.options button:not(:disabled):hover{border-color:var(--acid);background:#24282a;transform:translateX(5px)}.options button b{flex:0 0 31px;height:31px;display:grid;place-items:center;border:1px solid #444853;border-radius:7px;color:var(--acid);font:800 13px ui-monospace,monospace}.options button span{flex:1}.options button.correct{border-color:var(--acid);background:#29351c;color:#eaff9c}.options button.wrong{border-color:var(--hot);background:#3a1d24;color:#ffafb4}.options button.dim{opacity:.34}.feedback{margin-top:auto;padding-top:9px;color:#8d9099;font-size:11px;text-align:center}.stage{position:relative;background:radial-gradient(circle at 50% 40%,#373b46,#14161c 66%)}.stage:before{content:"WOLF  /  BOSS";position:absolute;left:18px;bottom:14px;color:#ffffff0b;font:900 clamp(28px,5vw,72px)/.8 ui-monospace,monospace;letter-spacing:-.08em;white-space:nowrap}.sun{position:absolute;right:8%;top:8%;width:130px;height:130px;border-radius:50%;background:repeating-linear-gradient(0deg,#d7ff3f 0 2px,transparent 2px 6px);opacity:.14}.ground{position:absolute;left:12%;right:12%;bottom:5%;height:8%;border-radius:50%;background:#0009;filter:blur(8px)}.wolf{position:absolute;z-index:3;width:220px;height:330px;left:50%;bottom:1%;scale:.98 1;transform:translateX(-50%);transition:.25s}.head{position:absolute;z-index:3;left:35px;top:35px;width:150px;height:145px;background:#747986;border:4px solid #0b0c10;border-radius:45% 45% 52% 52%;box-shadow:inset -10px -8px #545965}.ears i{position:absolute;z-index:2;top:5px;width:60px;height:85px;background:#626874;border:4px solid #0b0c10;clip-path:polygon(50% 0,100% 100%,0 100%)}.ears i:first-child{left:27px;transform:rotate(-24deg)}.ears i:last-child{right:27px;transform:rotate(24deg)}.eyes{display:flex;gap:24px;justify-content:center;padding-top:43px}.eyes i{width:22px;height:26px;border-radius:50%;background:#eeff9e;border:3px solid #0b0c10;box-shadow:0 0 13px #d7ff3f}.eyes i:after{content:"";display:block;width:7px;height:11px;margin:7px auto;background:#111;border-radius:50%}.brows{position:absolute;top:32px;left:39px;display:flex;gap:31px}.brows i{width:27px;height:5px;background:#0b0c10;transform:rotate(13deg)}.brows i:last-child{transform:rotate(-13deg)}.muzzle{position:absolute;left:34px;top:84px;width:82px;height:51px;border:3px solid #0b0c10;border-radius:50%;background:#b1b4bb}.nose{position:absolute;left:27px;top:-9px;width:28px;height:19px;border:3px solid #0b0c10;border-radius:50%;background:#111}.mouth{position:absolute;left:27px;top:24px;width:29px;height:12px;border-bottom:4px solid #0b0c10;border-radius:50%}.body{position:absolute;left:43px;top:168px;width:134px;height:145px;background:#5c626d;border:4px solid #0b0c10;border-radius:48% 48% 30% 30%}.belly{position:absolute;inset:31px 24px 12px;border-radius:50%;background:#888d96}.armLeft,.armRight{position:absolute;width:45px;height:120px;background:#5c626d;border:4px solid #0b0c10;border-radius:50%;z-index:-1}.armLeft{left:-27px;transform:rotate(24deg)}.armRight{right:-25px;transform:rotate(-22deg);transition:.3s}.armRight i{display:none}.speech{position:absolute;z-index:6;top:18px;left:18px;padding:9px 12px;color:#111;background:var(--acid);border-radius:7px;font-size:12px;font-weight:900}.hammer{position:absolute;z-index:8;top:-140px;left:48%;opacity:0}.hammer div{width:105px;height:65px;background:var(--hot);border:4px solid #111;border-radius:9px}.hammer span{display:block;margin:auto;width:18px;height:135px;background:#ddd;border:4px solid #111}.hammer.swing{animation:hammer .7s ease-in}.stars{position:absolute;z-index:10;left:46%;top:60px;color:var(--acid);font-size:34px}.stars i{position:absolute;animation:pop .8s}.stars i:nth-child(2){transform:translate(70px,35px)}.stars i:nth-child(3){transform:translate(-55px,50px)}.bump,.bruise{display:none;position:absolute;border:3px solid #111;border-radius:50%;background:#a95773}.bump{top:-20px;left:74px;width:36px;height:29px}.bruise{right:13px;top:72px;width:33px;height:18px}.beaten .bump,.beaten .bruise{display:block}.proud .armRight{transform:rotate(-145deg);transform-origin:bottom}.proud .mouth{background:#fff;border:3px solid #111;height:18px}.hit .stage{animation:shake .35s}.hit .wolf{animation:squash .55s}.cloudOne,.cloudTwo{display:none}.overlay{position:fixed;z-index:50;inset:0;display:grid;place-items:center;padding:18px;background:#050608dd;backdrop-filter:blur(10px)}.modal{width:min(440px,100%);padding:clamp(24px,5vw,40px);text-align:center;color:#fff;background:#15171d;border:1px solid #ffffff28;border-radius:18px;box-shadow:0 24px 90px #000}.resultIcon{font-size:64px}.modal h2{margin:6px 0;font-size:clamp(27px,5vw,40px)}.modal>p:not(.eyebrow){color:#a9abb2}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:22px 0}.stats div{display:flex;flex-direction:column;padding:12px;background:#202229;border-radius:9px}.stats strong{color:var(--acid);font-size:25px}.stats span{color:#888b94;font-size:10px}.resultActions{display:flex;justify-content:center;flex-wrap:wrap;gap:10px}.modal button,.resultBack{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:120px;padding:12px 22px;border:0;border-radius:8px;font:900 15px inherit;cursor:pointer}.modal button{color:#0b0c10;background:var(--acid)}.resultBack{color:#fff;background:#292c34;border:1px solid #ffffff2e;text-decoration:none}.resultBack:hover{background:#343842;border-color:#ffffff55}@keyframes hammer{0%{opacity:1;transform:translate(-100px,-80px) rotate(-50deg)}70%{opacity:1;transform:translateY(105px) rotate(18deg)}}@keyframes shake{25%{transform:translateX(-7px)}50%{transform:translateX(7px)}75%{transform:translateX(-3px)}}@keyframes squash{50%{transform:translateX(-50%) scale(1.08,.85)}}@keyframes pop{from{opacity:0;scale:.2}50%{opacity:1;scale:1.3}to{opacity:0;translate:0 -35px}}
+@media(min-width:960px){.game{height:calc(100svh - 68px)}.wolf{bottom:calc(1% + 72px)}.ground{bottom:calc(72px - 3%)}}
+@media(max-width:959px){.game{padding:9px}.shell{gap:7px}.arena{grid-template-columns:1fr;grid-template-rows:minmax(215px,1.06fr) minmax(270px,.94fr)}.stage{order:-1;border-radius:13px}.card{padding:13px;border-radius:13px}.wolf{bottom:-12px;scale:.804 .82;transform-origin:bottom}.speech{top:9px;left:9px}.sun{width:75px;height:75px}.card h2{margin:9px 0;font-size:18px}.options{gap:6px}.options button{min-height:43px;padding:5px 10px;font-size:13px;border-radius:8px}.options button b{flex-basis:27px;height:27px}.feedback{padding-top:5px;font-size:9px}.questionMeta{font-size:9px}.topbar h1{font-size:22px}.counter{height:36px;padding:0 9px}.counter strong{font-size:18px}.battleBar{padding:6px 9px 5px}.barLabels{font-size:8px}.barLabels b{font-size:10px}.track{height:7px;margin:5px 0 2px}.marker{width:15px;height:15px;border-width:2px}.ticks{font-size:7px}}
+@media(max-height:680px) and (max-width:959px){.eyebrow,.feedback,.ticks{display:none}.game{padding:6px}.arena{grid-template-rows:minmax(170px,.88fr) minmax(250px,1.12fr)}.wolf{bottom:-29px;scale:.666 .68}.card h2{font-size:16px;margin:6px 0}.options button{min-height:38px}.topbar h1{font-size:19px}}
+@media(prefers-reduced-motion:reduce){.game *{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+/* Layered wolf reactions */
+.injuryOne .bump{display:block;animation:bumpGrow .35s cubic-bezier(.2,1.8,.5,1)}
+.injuryOne .head{box-shadow:inset -10px -8px #545965,0 -2px 16px #ff596455}
+.injuryTwo .bruise{display:block;animation:bruiseIn .45s ease-out}
+.injuryTwo .eyes i:first-child{height:9px;margin-top:9px;border-radius:50%;background:#111;box-shadow:none}
+.injuryTwo .ears i:first-child{transform:rotate(-42deg) translateY(8px)}
+.injuryThree .head:after{content:"";position:absolute;left:12px;top:78px;width:29px;height:18px;border-radius:50%;background:#70445d99;transform:rotate(18deg);box-shadow:93px 25px 0 #70445d88}
+.injuryThree .mouth{width:38px;height:17px;left:22px;transform:rotate(-9deg);border-color:#7b1d38}
+.injuryThree .body{transform:rotate(-3deg)}
+.justHit{animation:wolfImpact .72s cubic-bezier(.2,.8,.3,1)!important}
+.justHit .head{animation:headBonk .72s ease-out}
+.justHit .ears i{animation:earFlap .5s ease-out}
+.prideOne .brows i:first-child{transform:rotate(-18deg)}
+.prideOne .brows i:last-child{transform:rotate(18deg)}
+.prideOne .mouth{height:18px;border:3px solid #111;border-top:0;background:#fff;transform:rotate(5deg)}
+.prideTwo .armLeft{left:-18px;top:20px;transform:rotate(58deg)}
+.prideTwo .armRight{right:-28px;top:-8px;transform:rotate(-142deg);transform-origin:50% 90%;z-index:2}
+.prideTwo .armRight i{display:block;position:absolute;top:-19px;width:12px;height:35px;border:3px solid #0b0c10;border-radius:9px;background:#5c626d}
+.prideTwo .armRight i:first-child{left:4px;transform:rotate(-12deg)}
+.prideTwo .armRight i:last-child{right:3px;transform:rotate(22deg)}
+.prideThree .head{transform:rotate(5deg) translateY(-3px)}
+.prideThree .eyes i{height:8px;margin-top:9px;border-radius:50%;background:#111;box-shadow:none}
+.prideThree .mouth{left:22px;width:40px;height:24px;background:#8f263a;border:3px solid #111;border-radius:4px 4px 50% 50%;animation:laughMouth .28s infinite alternate}
+.prideThree .body{animation:proudBounce .48s infinite alternate ease-in-out}
+.celebrate{animation:victoryHop .8s cubic-bezier(.2,.8,.3,1)}
+.celebrate .armRight{animation:vSignWave .8s ease-in-out}
+.dizzy{width:130px;height:55px;left:50%;top:42px;transform:translateX(-50%);animation:orbit 2.2s linear infinite}
+.dizzy i{opacity:1!important;animation:none!important;text-shadow:0 0 12px var(--acid)}
+.dizzy i:nth-child(1){left:0;top:20px}.dizzy i:nth-child(2){left:50px;top:0;transform:none}.dizzy i:nth-child(3){right:0;top:22px;transform:none}
+.hammer.swing{opacity:1;animation:hammerStrike .85s cubic-bezier(.2,.7,.25,1)}
+.hit .stage:after{content:"";position:absolute;z-index:7;left:50%;top:30%;width:20px;height:20px;border:5px solid var(--hot);border-radius:50%;transform:translate(-50%,-50%);animation:impactRing .55s ease-out forwards}
+@keyframes hammerStrike{0%{opacity:0;transform:translate(-145px,-110px) rotate(-55deg) scale(.75)}18%{opacity:1}62%{opacity:1;transform:translate(-8px,112px) rotate(15deg) scale(1)}73%{transform:translate(-12px,96px) rotate(9deg)}100%{opacity:0;transform:translate(-80px,-45px) rotate(-38deg)}}
+@keyframes wolfImpact{0%,100%{transform:translateX(-50%)}48%{transform:translateX(-50%) translateY(22px) scale(1.12,.76) rotate(-5deg)}65%{transform:translateX(-50%) translateY(-9px) scale(.94,1.08) rotate(4deg)}}
+@keyframes headBonk{45%{transform:translateY(13px) rotate(-10deg)}70%{transform:translateY(-7px) rotate(7deg)}}
+@keyframes earFlap{50%{scale:1 .65}}
+@keyframes bumpGrow{from{scale:.1;opacity:0}70%{scale:1.3}to{scale:1}}
+@keyframes bruiseIn{from{opacity:0;scale:.2;rotate:-30deg}to{opacity:1;scale:1;rotate:0deg}}
+@keyframes victoryHop{0%,100%{transform:translateX(-50%)}35%{transform:translateX(-50%) translateY(-24px) rotate(4deg)}60%{transform:translateX(-50%) translateY(0) scale(1.08,.92)}}
+@keyframes vSignWave{0%,100%{rotate:0deg}50%{rotate:-16deg}}
+@keyframes proudBounce{from{transform:translateY(0)}to{transform:translateY(-7px)}}
+@keyframes laughMouth{from{height:19px}to{height:28px}}
+@keyframes orbit{to{transform:translateX(-50%) rotate(360deg)}}
+@keyframes impactRing{from{opacity:1;scale:.2}to{opacity:0;scale:8}}
+
+/* Refined wolf silhouette */
+.head{width:156px;height:142px;left:32px;border-radius:42% 42% 48% 48%;background:linear-gradient(135deg,#89909e 0 48%,#686e7b 49%);box-shadow:inset -9px -9px #555b67,0 5px 0 #0003}
+.ears i{width:64px;height:94px;background:linear-gradient(75deg,#59606d 48%,#858c99 49%)}
+.ears i:after{content:"";position:absolute;inset:20px 15px 9px;background:#b66f77;clip-path:polygon(50% 0,100% 100%,0 100%);opacity:.65}
+.ears i:first-child{left:20px;transform:rotate(-20deg)}.ears i:last-child{right:20px;transform:rotate(20deg)}
+.head:before{content:"";position:absolute;z-index:-1;left:-16px;right:-16px;top:72px;height:64px;background:#747b88;clip-path:polygon(0 12%,22% 22%,14% 0,42% 26%,50% 12%,58% 26%,86% 0,78% 22%,100% 12%,88% 58%,96% 67%,70% 74%,50% 100%,30% 74%,4% 67%,12% 58%)}
+.eyes{gap:29px;padding-top:39px}.eyes i{width:25px;height:28px;transform:skew(-5deg)}.eyes i:last-child{transform:skew(5deg)}
+.brows{left:38px;top:27px;gap:35px}.brows i{width:29px;height:6px;border-radius:6px}
+.muzzle{left:27px;top:76px;width:102px;height:64px;border-radius:52% 52% 44% 44%;background:linear-gradient(#c5c8ce,#aeb2ba);clip-path:polygon(16% 0,84% 0,100% 68%,73% 100%,27% 100%,0 68%)}
+.nose{left:34px;top:-7px;width:34px;height:23px;border-radius:55% 55% 48% 48%;background:linear-gradient(145deg,#3b3d45,#0b0c10)}
+.nose:after{content:"";position:absolute;left:7px;top:4px;width:8px;height:4px;border-radius:50%;background:#fff6}
+.mouth{left:32px;top:32px;width:38px;height:16px}
+.body{left:38px;top:166px;width:144px;height:148px;background:linear-gradient(90deg,#5d6470,#747b86 52%,#545b67);border-radius:42% 42% 28% 28%}
+.belly{inset:24px 24px 8px;background:#9ba0a8;clip-path:polygon(50% 0,64% 19%,80% 13%,72% 35%,91% 40%,76% 55%,89% 68%,65% 72%,50% 100%,35% 72%,11% 68%,24% 55%,9% 40%,28% 35%,20% 13%,36% 19%)}
+.body:before,.body:after{content:"";position:absolute;z-index:-2;bottom:-19px;width:55px;height:51px;background:#555c68;border:4px solid #0b0c10;border-radius:35% 35% 48% 48%}
+.body:before{left:3px;transform:rotate(5deg)}.body:after{right:3px;transform:rotate(-5deg)}
+.armLeft,.armRight{background:linear-gradient(90deg,#555c68,#737a86)}
+.armLeft:after{content:"";position:absolute;left:-39px;bottom:-10px;width:100px;height:58px;background:#59606c;border:4px solid #0b0c10;border-radius:55% 20% 55% 35%;transform:rotate(24deg);z-index:-3;clip-path:polygon(0 45%,18% 22%,32% 34%,46% 11%,59% 33%,78% 20%,100% 47%,78% 100%,25% 89%)}
+.prideTwo .armRight i{background:#676e7a}
+.injuryThree .head:after{z-index:4}
+@media(max-width:959px){.wolf{bottom:-24px;scale:.706 .72}.speech{z-index:12}.dizzy{top:27px;scale:.8}}
+
+
+@media(max-height:680px) and (max-width:959px){.wolf{bottom:-39px;scale:.598 .61}}
+
+/* Centered, cleaner muzzle expressions */
+.muzzle{left:50%;transform:translateX(-50%)}
+.nose{left:50%;transform:translateX(-50%)}
+.mouth{left:50%;top:31px;width:50px;height:27px;transform:translateX(-50%);border:0;background:linear-gradient(90deg,transparent 48%,#282a30 48% 52%,transparent 52%);border-radius:0}
+.mouth:before,.mouth:after{content:"";position:absolute;top:5px;width:26px;height:15px;border-bottom:4px solid #282a30;background:transparent}
+.mouth:before{right:50%;border-radius:0 0 70% 20%;transform:rotate(5deg)}
+.mouth:after{left:50%;border-radius:0 0 20% 70%;transform:rotate(-5deg)}
+.prideOne .mouth{left:50%;top:31px;width:54px;height:29px;transform:translateX(-50%);border:0;background:transparent}
+.prideOne .mouth:before{height:19px;border-bottom-color:#15161a;transform:rotate(-10deg) translateY(-2px)}
+.prideOne .mouth:after{height:10px;border-bottom-color:#15161a;transform:rotate(-13deg) translateY(5px)}
+.prideThree .mouth{left:50%;top:31px;width:48px;height:27px;transform:translateX(-50%);border:3px solid #111;border-radius:8px 8px 50% 50%;background:#8f263a;overflow:hidden}
+.prideThree .mouth:before{left:4px;right:4px;top:0;width:auto;height:8px;border:0;border-radius:0 0 50% 50%;background:#fff}
+.prideThree .mouth:after{left:12px;right:12px;top:auto;bottom:-1px;width:auto;height:7px;border:0;border-radius:50% 50% 0 0;background:#e56a79;transform:none}
+.injuryThree .mouth{left:50%;top:32px;width:48px;height:25px;transform:translateX(-50%) rotate(-7deg);border:0;background:linear-gradient(90deg,transparent 48%,#6f253b 48% 52%,transparent 52%)}
+.injuryThree .mouth:before,.injuryThree .mouth:after{border-bottom-color:#6f253b}
+
+/* Simplified canine mouth */
+.mouth{left:50%;top:30px;width:0;height:13px;transform:translateX(-50%);border:0;border-left:3px solid #24262b;background:none;overflow:visible}
+.mouth:before,.mouth:after{content:"";position:absolute;top:7px;width:23px;height:12px;background:none;border:0;border-bottom:3px solid #24262b}
+.mouth:before{right:0;border-radius:0 0 75% 18%;transform:rotate(7deg);transform-origin:right top}
+.mouth:after{left:-3px;border-radius:0 0 18% 75%;transform:rotate(-7deg);transform-origin:left top}
+.prideOne .mouth{left:50%;top:32px;width:47px;height:19px;transform:translateX(-50%) rotate(-3deg);border:0;background:none}
+.prideOne .mouth:before{left:0;right:auto;top:-2px;width:47px;height:18px;border:0;border-bottom:4px solid #202126;border-radius:0 0 55% 55%;transform:rotate(-4deg)}
+.prideOne .mouth:after{left:30px;top:11px;width:9px;height:11px;border:0;background:#fff4d7;clip-path:polygon(0 0,100% 0,50% 100%);transform:rotate(-4deg)}
+.prideThree .mouth{left:50%;top:30px;width:45px;height:30px;transform:translateX(-50%);border:3px solid #111;border-radius:7px 7px 48% 48%;background:#7f2538;overflow:hidden}
+.prideThree .mouth:before{left:2px;right:2px;top:0;width:auto;height:8px;border:0;border-radius:0 0 45% 45%;background:#fff;transform:none}
+.prideThree .mouth:after{left:9px;right:9px;top:auto;bottom:-2px;width:auto;height:9px;border:0;border-radius:50% 50% 0 0;background:#e87883;transform:none}
+.injuryThree .mouth{left:50%;top:31px;width:0;height:13px;transform:translateX(-50%) rotate(-8deg);border:0;border-left:3px solid #6f253b;background:none;overflow:visible}
+.injuryThree .mouth:before,.injuryThree .mouth:after{background:none;border:0;border-bottom:3px solid #6f253b}
+
+/* Symmetric brow and facial refinement */
+.brows{z-index:6;left:50%;top:29px;width:92px;display:flex;justify-content:space-between;gap:0;transform:translateX(-50%)}
+.brows i{flex:0 0 29px;height:5px;border-radius:999px;background:#1b1c21;transform:rotate(13deg);transform-origin:center}
+.brows i:last-child{transform:rotate(-13deg)}
+.prideOne .brows i:first-child{transform:rotate(-18deg) translateY(-1px)}
+.prideOne .brows i:last-child{transform:rotate(18deg) translateY(-1px)}
+.prideThree .brows{top:27px}
+.prideThree .brows i:first-child{transform:rotate(9deg)}
+.prideThree .brows i:last-child{transform:rotate(-9deg)}
+.head{left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#9299a5 0 24%,#767d89 53%,#5c6370 100%);box-shadow:inset -8px -7px #535a66,0 5px 10px #0003}
+.ears i:first-child{left:26px}.ears i:last-child{right:26px}
+.eyes{position:relative;z-index:5;gap:27px}.eyes i{box-shadow:0 0 9px #d7ff3f66}
+.muzzle{filter:drop-shadow(0 2px 1px #0002)}
+.nose{background:linear-gradient(145deg,#44464d 0 35%,#111218 65%);box-shadow:inset 2px 2px #ffffff2b}
+
+/* Cinematic hammer strike */
+.hammer{top:calc(100% - 360px);left:calc(50% - 80px);width:112px;height:178px;opacity:0;pointer-events:none;transform-origin:56px 158px;filter:drop-shadow(0 10px 5px #0008)}
+.hammer .hammerHead{position:absolute;left:0;top:0;width:112px!important;height:66px!important;margin:0!important;border:4px solid #4a2f1e;border-radius:14px 14px 11px 11px;background:linear-gradient(180deg,#edc895 0 12%,#dca66d 13% 72%,#bd8050 73% 100%);box-shadow:inset 0 5px #ffe1b477,inset -7px -7px #925b38,0 4px 0 #0005}
+.hammer .hammerHead:before,.hammer .hammerHead:after{content:"";position:absolute;background:transparent}
+.hammer .hammerHead:before{left:12px;top:17px;width:72px;height:18px;border-top:3px solid #8e573288;border-bottom:2px solid #edc38f77;border-radius:50%;transform:rotate(-3deg)}
+.hammer .hammerHead:after{right:13px;top:34px;width:25px;height:13px;border:3px solid #89522f99;border-radius:50%;box-shadow:inset 0 0 0 3px #d9a26866;transform:rotate(9deg)}
+.hammer .hammerHead i{position:absolute;left:50%;bottom:-12px;width:31px;height:18px;border:4px solid #4a2f1e;border-radius:4px;background:#bd8355;box-shadow:inset 4px 0 #e0ad7555;transform:translateX(-50%)}
+.hammer .hammerHandle{position:absolute!important;z-index:-1;left:50%;top:54px;width:22px!important;height:124px!important;margin:0!important;border:4px solid #4a2f1e;border-radius:5px 5px 12px 12px;background:repeating-linear-gradient(165deg,#e2b984 0 15px,#ca925e 15px 20px)!important;box-shadow:inset -5px 0 #a56c43;transform:translateX(-50%)}
+.hammerMotion{position:absolute;inset:0;width:112px!important;height:178px!important;border:0!important;border-radius:0!important;background:transparent!important;transform-origin:56px 158px;transform:translate(-6px,1px) rotate(45deg) scale(1.04)}
+.hammer.swing{opacity:1;animation:none}
+.hammer.swing .hammerMotion{animation:hammerStrikeDeluxe .82s cubic-bezier(.16,.72,.2,1) both}
+.impactFx{position:absolute;z-index:11;left:calc(50% - 42px);bottom:295px;width:18px;height:18px;pointer-events:none;transform:translate(-50%,50%);opacity:0}
+.impactFx i{position:absolute;left:50%;top:50%;width:7px;height:55px;border-radius:8px;background:linear-gradient(var(--acid),transparent);transform-origin:50% 0}
+.impactFx i:nth-child(1){transform:rotate(0deg) translateY(-10px)}.impactFx i:nth-child(2){transform:rotate(60deg) translateY(-10px)}.impactFx i:nth-child(3){transform:rotate(120deg) translateY(-10px)}.impactFx i:nth-child(4){transform:rotate(180deg) translateY(-10px)}.impactFx i:nth-child(5){transform:rotate(240deg) translateY(-10px)}.impactFx i:nth-child(6){transform:rotate(300deg) translateY(-10px)}
+.impactFx b{position:absolute;left:24px;top:-47px;width:max-content;padding:7px 10px;color:#fff;background:#111;border:3px solid var(--acid);border-radius:50%;font:1000 18px/1 inherit;letter-spacing:.08em;text-shadow:2px 2px #c73549;transform:rotate(-10deg)}
+.impactActive{animation:impactFlash .48s .5s ease-out both}.impactActive i{animation:impactRay .42s .5s ease-out both}.impactActive b{animation:impactWord .55s .5s cubic-bezier(.2,1.7,.4,1) both}
+.dust{position:absolute;z-index:5;left:50%;bottom:8%;width:190px;height:45px;pointer-events:none;transform:translateX(-50%)}
+.dust i{position:absolute;bottom:0;width:48px;height:28px;border-radius:50%;background:#a7a29655;filter:blur(2px);opacity:0}.dust i:nth-child(1){left:20px}.dust i:nth-child(2){left:72px}.dust i:nth-child(3){right:17px}
+.dustActive i{animation:dustPuff .55s .52s ease-out both}.dustActive i:nth-child(2){animation-delay:.56s}.dustActive i:nth-child(3){animation-delay:.54s}
+.hit .stage{animation:stageImpact .36s .5s}
+.justHit{animation:wolfImpactDeluxe .86s cubic-bezier(.2,.8,.3,1)!important}
+.justHit .head{animation:headBonkDeluxe .36s .5s ease-out}
+.justHit .ears i{animation:earFlapDeluxe .3s .5s ease-out}
+.hit .stage:after{left:calc(50% - 42px);top:auto;bottom:295px;border-color:#fff;transform:translate(-50%,50%);animation:impactRing .55s .5s ease-out both}
+@keyframes hammerStrikeDeluxe{0%{opacity:0;transform:translate(-175px,-135px) rotate(-52deg) scale(.88)}8%{opacity:1}24%{opacity:1;transform:translate(-205px,-155px) rotate(-72deg) scale(.94)}42%{transform:translate(-132px,-105px) rotate(-48deg) scale(.98)}54%{transform:translate(-58px,-45px) rotate(-24deg) scale(1.01)}60%,64%{opacity:1;transform:translate(-6px,1px) rotate(45deg) scale(1.04)}72%{transform:translate(-48px,-42px) rotate(-24deg) scale(.99)}86%{opacity:.75;transform:translate(-92px,-78px) rotate(-38deg) scale(.94)}100%{opacity:0;transform:translate(-145px,-118px) rotate(-48deg) scale(.88)}}
+@keyframes wolfImpactDeluxe{0%,64%,100%{transform:translateX(-50%)}70%{transform:translateX(-50%) translateY(4px) scale(1.02,.96) rotate(-1deg)}82%{transform:translateX(-50%) translateY(-2px) scale(.99,1.02) rotate(1deg)}92%{transform:translateX(-50%) translateY(1px) scale(1.01,.99) rotate(-.5deg)}}
+@keyframes headBonkDeluxe{0%{transform:translateX(-50%)}28%{transform:translateX(-50%) translateY(3px) rotate(-2deg)}62%{transform:translateX(-50%) translateY(-1px) rotate(1deg)}100%{transform:translateX(-50%)}}
+@keyframes earFlapDeluxe{45%{scale:1 .92}75%{scale:1 1.02}}
+@keyframes stageImpact{0%,100%{transform:translateX(0)}20%{transform:translateX(-9px) rotate(-.4deg)}45%{transform:translateX(7px) rotate(.3deg)}70%{transform:translateX(-4px)}}
+@keyframes impactFlash{0%{opacity:0;filter:brightness(1)}15%{opacity:1;filter:brightness(2)}100%{opacity:0;scale:1.45}}
+@keyframes impactRay{from{opacity:1;scale:.35}to{opacity:0;scale:1.5}}
+@keyframes impactWord{0%{opacity:0;transform:rotate(-10deg) scale(.2)}45%{opacity:1;transform:rotate(7deg) scale(1.25)}100%{opacity:0;transform:translate(14px,-20px) rotate(-5deg) scale(.9)}}
+@keyframes dustPuff{0%{opacity:0;transform:translate(0,0) scale(.25)}35%{opacity:.8}100%{opacity:0;transform:translate(-24px,-20px) scale(1.8)}}
+@media(min-width:960px){.marker{transition-timing-function:cubic-bezier(.2,1.16,.5,1)}.dizzy{left:var(--wolf-head-x,50%);top:max(8px,calc(var(--wolf-head-top,42px) - 82px))}.hammer{top:var(--hammer-top,calc(100% - 360px));left:calc(var(--wolf-head-x,50%) - 178px)}.impactFx{left:calc(var(--wolf-head-x,50%) - 140px);top:var(--wolf-head-top,30%);bottom:auto;transform:translate(-50%,-50%)}.hit .stage:after{left:calc(var(--wolf-head-x,50%) - 140px);top:var(--wolf-head-top,30%);bottom:auto;transform:translate(-50%,-50%)}}
+@media(max-width:959px){.hammer{top:var(--hammer-top,calc(100% - 247px));left:calc(50% - 110px);transform:scale(.74)}.impactFx{top:auto;bottom:188px;scale:.8}.hit .stage:after{top:auto;bottom:188px}.dust{bottom:5%;scale:.8}}
+
+/* Keep the victory pose connected: shoulder -> arm -> paw -> V fingers. */
+.celebrate .armRight,.prideTwo .armRight,.prideThree .armRight{right:-22px;top:5px;z-index:2;transform:rotate(-148deg);transform-origin:50% 12%}
+.celebrate .armRight{animation:victoryArm .78s cubic-bezier(.2,.85,.3,1)}
+.celebrate .armRight i,.prideTwo .armRight i,.prideThree .armRight i{display:block;position:absolute;top:auto;bottom:-25px;width:13px;height:38px;border:3px solid #0b0c10;border-radius:10px 10px 7px 7px;background:linear-gradient(90deg,#555c68,#737a86);transform-origin:50% 4px}
+.celebrate .armRight i:first-child,.prideTwo .armRight i:first-child,.prideThree .armRight i:first-child{left:3px;transform:rotate(13deg)}
+.celebrate .armRight i:last-child,.prideTwo .armRight i:last-child,.prideThree .armRight i:last-child{right:2px;transform:rotate(-24deg)}
+.prideThree .head{transform:translateX(-50%) translateY(-3px) rotate(5deg)}
+@keyframes victoryArm{0%{transform:rotate(-22deg)}38%{transform:rotate(-158deg)}58%{transform:rotate(-140deg)}76%,100%{transform:rotate(-148deg)}}
+.battleBar{position:relative;padding-left:104px}.back{position:absolute;z-index:20;top:50%;left:12px;display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 12px;border:1px solid #ffffff2b;border-radius:999px;color:#dfe2e8;background:#15171dcc;box-shadow:0 8px 24px #0004;backdrop-filter:blur(10px);font-size:12px;font-weight:800;letter-spacing:.08em;transform:translateY(-50%);transition:color .2s,background .2s,border-color .2s,transform .2s}.back:hover{color:#0b0c10;background:var(--acid);border-color:var(--acid);transform:translate(-2px,-50%)}.back:focus-visible{outline:2px solid var(--acid);outline-offset:3px}@media(max-width:959px){.battleBar{padding-left:50px}.back{left:8px;width:34px;height:34px;padding:0;justify-content:center}.back span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}
+
+/* A loose, joint-led victory gesture: weight shift first, shoulder and wrist follow. */
+.celebrate{animation:wolfSwagger 1.05s cubic-bezier(.22,.72,.28,1) both}
+.celebrate .body{animation:swaggerTorso 1.05s cubic-bezier(.22,.72,.28,1) both;transform-origin:50% 85%}
+.celebrate .head{animation:swaggerHead 1.05s cubic-bezier(.22,.72,.28,1) both;transform-origin:50% 82%}
+.celebrate .armRight{animation:raiseVictoryHand 1.05s cubic-bezier(.22,.76,.3,1) both}
+.celebrate .armRight i:first-child{animation:openFingerLeft .34s .47s ease-out both}.celebrate .armRight i:last-child{animation:openFingerRight .34s .5s ease-out both}
+.celebrate .armLeft{animation:restOnHip 1.05s cubic-bezier(.25,.7,.35,1) both;transform-origin:50% 12%}
+.celebrate .brows{animation:quickBrow .72s .16s ease-out both}
+.celebrate.prideTwo .head{animation-name:swaggerHeadProud}.celebrate.prideThree .head{animation-name:swaggerHeadLaugh}.celebrate.prideThree .body{animation-name:swaggerTorsoLaugh}
+@keyframes wolfSwagger{0%{transform:translateX(-50%)}20%{transform:translateX(calc(-50% - 5px)) translateY(2px) rotate(-1deg)}48%{transform:translateX(calc(-50% + 5px)) translateY(-2px) rotate(1.5deg)}72%{transform:translateX(calc(-50% + 2px)) rotate(.5deg)}100%{transform:translateX(-50%)}}
+@keyframes swaggerTorso{0%,14%{transform:rotate(0)}38%{transform:rotate(-2.5deg)}60%{transform:rotate(2deg)}82%,100%{transform:rotate(0)}}@keyframes swaggerHead{0%,18%{transform:translateX(-50%) rotate(0)}42%{transform:translateX(-50%) translateY(-2px) rotate(-5deg)}66%{transform:translateX(-50%) translateY(-3px) rotate(4deg)}84%,100%{transform:translateX(-50%) rotate(2deg)}}
+@keyframes swaggerHeadProud{0%,18%{transform:translateX(-50%)}42%{transform:translateX(-50%) translateY(-3px) rotate(-6deg)}68%,100%{transform:translateX(-50%) translateY(-3px) rotate(4deg)}}@keyframes swaggerHeadLaugh{0%,18%{transform:translateX(-50%) translateY(-3px) rotate(5deg)}44%{transform:translateX(-50%) translateY(-6px) rotate(-4deg)}68%{transform:translateX(-50%) translateY(-2px) rotate(7deg)}100%{transform:translateX(-50%) translateY(-3px) rotate(5deg)}}
+@keyframes swaggerTorsoLaugh{0%,20%{transform:rotate(0)}42%{transform:rotate(-3deg)}58%{transform:rotate(2deg) translateY(-2px)}72%{transform:rotate(-1deg)}100%{transform:rotate(0)}}@keyframes raiseVictoryHand{0%,16%{transform:rotate(-22deg)}34%{transform:rotate(-78deg)}55%{transform:rotate(-139deg)}70%{transform:rotate(-151deg)}84%{transform:rotate(-145deg)}100%{transform:rotate(-148deg)}}
+@keyframes restOnHip{0%,20%{transform:rotate(24deg)}52%{transform:rotate(43deg)}72%,100%{transform:rotate(38deg)}}@keyframes openFingerLeft{0%{transform:rotate(-2deg) scaleY(.35)}75%{transform:rotate(16deg) scaleY(1.04)}100%{transform:rotate(13deg) scaleY(1)}}@keyframes openFingerRight{0%{transform:rotate(-2deg) scaleY(.35)}75%{transform:rotate(-27deg) scaleY(1.04)}100%{transform:rotate(-24deg) scaleY(1)}}
+@keyframes quickBrow{0%,20%{translate:0 0}42%{translate:0 -3px}64%{translate:0 1px}100%{translate:0 0}}
+@media(prefers-reduced-motion:reduce){.celebrate,.celebrate .body,.celebrate .head,.celebrate .armRight,.celebrate .armRight i,.celebrate .armLeft,.celebrate .brows{animation:none}}
+/* Compact left fist: same visual weight as the arm, with no extra finger details. */
+.armLeft{height:112px}
+.armLeft:before{content:none}
+.armLeft:after{left:-3px;bottom:-18px;width:47px;height:42px;border:4px solid #0b0c10;border-radius:50%;clip-path:none;z-index:2;background:linear-gradient(135deg,#747b87,#555c68);box-shadow:inset -4px -4px #474e59;transform:none}
+.prideOne .armLeft:after,.prideTwo .armLeft:after,.prideThree .armLeft:after{transform:none}
+.celebrate.prideOne .armLeft:after,.celebrate.prideTwo .armLeft:after,.celebrate.prideThree .armLeft:after{animation:none}
+
+/* Seamless left shoulder: the arm pivots from inside the torso and stays behind it. */
+.wolf .body .armLeft{left:-10px!important;top:7px!important;width:40px;z-index:-1!important;transform-origin:50% 12px!important}
+
+/* New second/third wrong-answer gestures stay outside the torso. */
+.celebrate.prideTwo:not(.prideThree) .armLeft{animation:leftArmShowOff 1.08s cubic-bezier(.22,.76,.3,1) both}
+.prideTwo:not(.prideThree):not(.celebrate) .armLeft{transform:rotate(49deg)}
+.prideOne:not(.prideTwo) .armLeft{transform:rotate(49deg)}
+.wolf.prideOne:not(.prideTwo) .body .armRight{right:-10px;top:7px;width:40px;z-index:-1;transform:rotate(-49deg);transform-origin:50% 12px}
+.celebrate.prideThree .armLeft{animation:leftArmVictoryPump 1.12s cubic-bezier(.22,.76,.3,1) both}
+.prideThree:not(.celebrate) .armLeft{transform:rotate(100deg)}
+.prideThree .armLeft:after{left:50%;margin-left:-23.5px;background:linear-gradient(180deg,#747b87,#555c68);box-shadow:inset 0 -4px #474e59}
+.celebrate.prideTwo .armLeft:after,.celebrate.prideThree .armLeft:after,.prideTwo .armLeft:after,.prideThree .armLeft:after{animation:none;transform:none}
+@keyframes leftArmShowOff{0%,16%{transform:rotate(24deg)}40%{transform:rotate(44deg)}62%{transform:rotate(54deg)}78%{transform:rotate(47deg)}100%{transform:rotate(49deg)}}
+@keyframes leftArmVictoryPump{0%,14%{transform:rotate(24deg)}38%{transform:rotate(62deg)}62%{transform:rotate(98deg)}75%{transform:rotate(106deg)}87%{transform:rotate(97deg)}100%{transform:rotate(100deg)}}
+
+
+/* A wrong answer gives the wolf a healing pill without replacing its reaction. */
+.healingPill{position:absolute;z-index:14;left:var(--wolf-head-x,50%);top:calc(var(--wolf-head-top,30%) + 103px);width:52px;height:30px;pointer-events:none;opacity:0;transform:translate(-230px,-125px) rotate(-28deg) scale(.45)}
+.healingPill span{position:absolute;inset:0;overflow:hidden;border:4px solid #101116;border-radius:999px;background:linear-gradient(90deg,#ff5964 0 50%,#f7f4ec 50%);box-shadow:inset 0 4px #fff8,0 7px 16px #0008}
+.healingPill span:after{content:"";position:absolute;left:50%;top:0;bottom:0;width:4px;background:#101116;transform:translateX(-50%)}
+.healingPill span i{position:absolute;left:10px;top:6px;width:8px;height:5px;border-radius:50%;background:#fff9;transform:rotate(-20deg)}
+.healingPill b{position:absolute;left:50%;top:-42px;width:max-content;padding:5px 9px;border:2px solid #fff;border-radius:999px;color:#fff;background:#27a85d;font:900 13px/1 inherit;text-shadow:1px 1px #126532;transform:translateX(-50%)}
+.healingPillActive{animation:healPillFly .92s cubic-bezier(.18,.72,.25,1) both}
+.healingPillActive b{animation:healLabel .92s ease-out both}
+@keyframes healPillFly{0%{opacity:0;transform:translate(-230px,-125px) rotate(-28deg) scale(.45)}12%{opacity:1}48%{transform:translate(-105px,-95px) rotate(16deg) scale(1.12)}76%{opacity:1;transform:translate(-50%,-50%) rotate(-5deg) scale(.9)}100%{opacity:0;transform:translate(-50%,-50%) rotate(0) scale(.25)}}
+@keyframes healLabel{0%,28%{opacity:0;transform:translate(-50%,8px) scale(.6)}48%,76%{opacity:1;transform:translate(-50%,0) scale(1)}100%{opacity:0;transform:translate(-50%,-15px) scale(.9)}}
+@media(max-width:959px){.healingPill{top:calc(var(--wolf-head-top,30%) + 76px);scale:.78}.healingPill b{font-size:12px}}
+@media(prefers-reduced-motion:reduce){.healingPillActive{animation:healPillReduced .3s both}.healingPillActive b{animation:none}@keyframes healPillReduced{from{opacity:1;transform:translate(-50%,-50%) scale(1)}to{opacity:0;transform:translate(-50%,-50%) scale(.5)}}}
+/* +1 / +2: progressively more painful faces without changing the bump or dizziness. */
+.injuryOne:not(.injuryTwo) .brows i:first-child{transform:rotate(-10deg) translateY(4px)}
+.injuryOne:not(.injuryTwo) .brows i:last-child{transform:rotate(10deg) translateY(4px)}
+.injuryOne:not(.injuryTwo) .eyes i{height:14px;margin-top:7px}
+.injuryOne:not(.injuryTwo) .mouth:before{transform:rotate(20deg) translateY(4px);border-bottom-color:#793047}
+.injuryOne:not(.injuryTwo) .mouth:after{transform:rotate(-20deg) translateY(4px);border-bottom-color:#793047}
+.injuryOne.injuryTwo:not(.injuryThree) .brows i:first-child{transform:rotate(-22deg) translateY(6px)}
+.injuryOne.injuryTwo:not(.injuryThree) .brows i:last-child{transform:rotate(22deg) translateY(6px)}
+.injuryOne.injuryTwo:not(.injuryThree) .eyes i:last-child{height:8px;margin-top:10px}
+.injuryOne.injuryTwo:not(.injuryThree) .mouth:before{transform:rotate(28deg) translateY(6px);border-bottom-color:#6f253b}
+.injuryOne.injuryTwo:not(.injuryThree) .mouth:after{transform:rotate(-28deg) translateY(6px);border-bottom-color:#6f253b}
+.injuryOne:not(.injuryTwo) .mouth:before{left:-14px;right:auto;top:11px;width:28px;height:8px;border:0;border-top:3px solid #793047;border-radius:48% 48% 0 0;transform:none}
+.injuryOne:not(.injuryTwo) .mouth:after{display:none}
+.injuryOne.injuryTwo:not(.injuryThree) .mouth:before{left:-22px;right:auto;top:9px;width:44px;height:17px;border:0;border-top:4px solid #6f253b;border-radius:60% 60% 0 0;transform:none}
+.injuryOne.injuryTwo:not(.injuryThree) .mouth:after{display:none}
+/* +3: the wolf's most badly beaten battle state. */
+.injuryThree .head{animation:criticalWobble 1.12s cubic-bezier(.22,.72,.28,1) both}
+.injuryThree .body{animation:criticalSlump 1.12s cubic-bezier(.22,.72,.28,1) both;transform-origin:50% 90%}
+.injuryThree .ears i:first-child{transform:rotate(-55deg) translate(-5px,13px)}
+.injuryThree .ears i:last-child{transform:rotate(55deg) translate(5px,13px)}
+.injuryThree .eyes i{position:relative;height:7px;margin-top:11px;border-radius:50%;background:#17181c;box-shadow:none}
+.injuryThree .eyes i:after{display:none}
+.injuryThree .eyes i:last-child:after{content:"";display:block;position:absolute;left:8px;top:8px;width:9px;height:15px;margin:0;border-radius:70% 30% 65% 35%;background:#72cfff;box-shadow:0 2px 5px #2b8fc999;transform:rotate(12deg)}
+.injuryThree .armLeft{transform:rotate(35deg)}
+.injuryThree .armRight{transform:rotate(-35deg)}
+@keyframes criticalWobble{0%{transform:translateX(-50%) rotate(0)}30%{transform:translateX(-50%) translateY(5px) rotate(-8deg)}55%{transform:translateX(-50%) translateY(8px) rotate(6deg)}78%{transform:translateX(-50%) translateY(9px) rotate(-5deg)}100%{transform:translateX(-50%) translateY(10px) rotate(-4deg)}}
+@keyframes criticalSlump{0%{transform:rotate(-3deg) scaleY(1)}45%{transform:translateY(5px) rotate(-6deg) scaleY(.96)}100%{transform:translateY(8px) rotate(-5deg) scaleY(.94)}}
+@media(min-width:960px){.speech{font-size:16px}}

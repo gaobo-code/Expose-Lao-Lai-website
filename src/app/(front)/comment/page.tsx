@@ -1,8 +1,7 @@
 import Image from "next/image";
 import { Inbox, MessageCircle, Quote, ShieldCheck, Sparkles } from "lucide-react";
-import clsx from "clsx";
-import { commentData } from "@/lib/data"
 import type { Metadata } from "next";
+import { comments } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "老赖王思宇的故事",
@@ -12,9 +11,9 @@ export const metadata: Metadata = {
   openGraph: {
     url: "https://llwsydgs.com/comment",
   },
-  robots:{
-    index:false,
-    follow:false,
+  robots: {
+    index: false,
+    follow: false,
     googleBot: {
       index: false,
       follow: false,
@@ -39,10 +38,10 @@ export default function Comment() {
                 <Sparkles size={14} strokeWidth={2} />
                 精彩留言
               </div>
-              <h1 className={clsx("text-[28px] leading-tight text-[var(--hometitlecolor)] sm:text-[34px]")}>
+              <h1 className={"text-[28px] leading-tight text-[var(--hometitlecolor)] sm:text-[34px]"}>
                 网友评论墙
               </h1>
-              <p className={clsx("mt-3 max-w-xl text-[15px] leading-[1.625rem] b:leading-7 text-[var(--subtitlecolor)] sm:text-base")}>
+              <p className={"mt-3 max-w-xl text-[15px] leading-[1.625rem] b:leading-7 text-[var(--subtitlecolor)] sm:text-base"}>
                 以下评论来自网友的精彩留言，每一条声音都被认真收录。
               </p>
             </div>
@@ -53,7 +52,7 @@ export default function Comment() {
                     <MessageCircle size={15} />
                     留言数量
                   </div>
-                  <div className="mt-2 text-2xl font-bold text-[var(--hometitlecolor)]">{commentData.length}</div>
+                  <div className="mt-2 text-2xl font-bold text-[var(--hometitlecolor)]">{comments.length}</div>
                 </div>
                 <div className="rounded-md border border-white/75 bg-white/70 px-4 py-3 shadow-[0_10px_24px_rgba(24,39,75,0.07)] backdrop-blur dark:border-white/10 dark:bg-white/7 dark:shadow-[0_10px_24px_rgba(0,0,0,0.2)]">
                   <div className="flex items-center gap-2 text-xs font-semibold text-gray-500 dark:text-[#B7C0CC]">
@@ -61,7 +60,7 @@ export default function Comment() {
                     展示状态
                   </div>
                   <div className="mt-2 text-sm font-bold leading-8 text-[var(--hometitlecolor)]">
-                    {commentData.length > 0 ? "已收录" : "待更新"}
+                    {comments.length > 0 ? "已收录" : "待更新"}
                   </div>
                 </div>
               </div>
@@ -70,21 +69,20 @@ export default function Comment() {
         </header>
 
         <div className="flex-1 flex flex-col px-0 py-5 sm:px-5 b:px-10 b:py-8">
-          {commentData.length === 0 ? (
+          {comments.length === 0 ? (
             <div className="flex-1 flex flex-col items-center justify-center rounded-lg border border-dashed border-[#C9D5E0] bg-[linear-gradient(180deg,rgba(47,151,216,0.07),rgba(255,255,255,0.36))] px-6 py-16 text-center dark:border-[#555F70] dark:bg-[linear-gradient(180deg,rgba(201,42,29,0.1),rgba(48,54,65,0.72))] dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]">
-              <p className={clsx("mt-5 text-xl text-[var(--hometitlecolor)]")}>暂无内容</p>
-              <p className={clsx("mt-2 max-w-sm text-sm leading-6 text-gray-500 dark:text-[#B7C0CC]")}>
+              <p className={"mt-5 text-xl text-[var(--hometitlecolor)]"}>暂无内容</p>
+              <p className={"mt-2 max-w-sm text-sm leading-6 text-gray-500 dark:text-[#B7C0CC]"}>
                 评论区还在等待第一条精彩留言。
               </p>
             </div>
           ) : (
             <div className="grid gap-4">
-              {commentData.map((item, index) => (
+              {comments.map((item, index) => (
                 <section
                   key={index}
-                  className={clsx(
-                    "group relative overflow-hidden rounded-lg border border-[#E6EBF0] bg-[linear-gradient(180deg,rgba(255,255,255,0.96),rgba(248,250,252,0.92))] p-4 shadow-[0_10px_28px_rgba(24,39,75,0.06)] transition duration-200 hover:-translate-y-0.5 hover:border-[#B9DDF4] hover:shadow-[0_16px_36px_rgba(24,39,75,0.1)] sm:p-5 dark:border-[#424A58] dark:bg-[linear-gradient(180deg,rgba(60,67,80,0.96),rgba(48,54,65,0.92))] dark:shadow-[0_12px_30px_rgba(0,0,0,0.22),inset_0_1px_0_rgba(255,255,255,0.03)] dark:hover:border-[#676F7D] dark:hover:shadow-[0_18px_40px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.04)]"
-                  )}
+                  className={
+                    "group relative overflow-hidden rounded-lg border border-[#E6EBF0] bg-[linear-gradient(180deg,rgba(255,255,255,0.96),rgba(248,250,252,0.92))] p-4 shadow-[0_10px_28px_rgba(24,39,75,0.06)] transition duration-200 hover:-translate-y-0.5 hover:border-[#B9DDF4] hover:shadow-[0_16px_36px_rgba(24,39,75,0.1)] sm:p-5 dark:border-[#424A58] dark:bg-[linear-gradient(180deg,rgba(60,67,80,0.96),rgba(48,54,65,0.92))] dark:shadow-[0_12px_30px_rgba(0,0,0,0.22),inset_0_1px_0_rgba(255,255,255,0.03)] dark:hover:border-[#676F7D] dark:hover:shadow-[0_18px_40px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.04)]"}
                 >
                   <div className="absolute left-0 top-0 h-full w-1 bg-[linear-gradient(180deg,var(--maincolor),var(--text1),var(--text3))] opacity-70 transition-opacity group-hover:opacity-100" />
                   <div className="flex items-start justify-between gap-4 pl-2">
@@ -112,7 +110,7 @@ export default function Comment() {
                     </div>
                   </div>
 
-                  <div className={clsx("justify-cjk mt-4 pl-2 text-[16px] leading-[1.625rem] b:leading-7 text-[#4c4d4d] sm:pl-14 sm:text-[17px] dark:text-[#DDE3EA]")}>
+                  <div className={"justify-cjk mt-4 pl-2 text-[16px] leading-[1.625rem] b:leading-7 text-[#4c4d4d] sm:pl-14 sm:text-[17px] dark:text-[#DDE3EA]"}>
                     {item.content}
                   </div>
 
@@ -122,7 +120,7 @@ export default function Comment() {
                         <Quote size={15} className="text-maincolor" />
                         站长回复
                       </div>
-                      <div className={clsx("justify-cjk text-[15px] leading-[1.625rem] b:leading-7 text-[#4c4d4d] dark:text-[#DDE3EA]")}>
+                      <div className={"justify-cjk text-[15px] leading-[1.625rem] b:leading-7 text-[#4c4d4d] dark:text-[#DDE3EA]"}>
                         {item.reply}
                       </div>
                     </div>

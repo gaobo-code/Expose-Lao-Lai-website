@@ -10,6 +10,6 @@ Author Introduction: My name is Gao Bo. I am an experienced full-stack developer
 
 GitHub Repository: https://github.com/gaobo-code/Expose-Lao-Lai-website
 
-Front-end Details: The front-end is divided into six main modules: homepage, articles, images, comics, videos, and comments. It uses responsive design and works well on both desktop and mobile devices. The website supports light and dark mode switching and is optimized for SEO, allowing search engines to index its content.
+Front-end Details: The front-end is divided into ten main modules: homepage, articles, images, comics, videos, comments, scam companies, family scams, fortune house, and fun quiz. It uses responsive design and works well on both desktop and mobile devices. The website supports light and dark mode switching and is optimized for SEO, allowing search engines to index its content.
 
 Back-end Details: The back-end includes QQ group management, comment management, system settings, and security features designed to help prevent hacking attempts and malicious attacks.

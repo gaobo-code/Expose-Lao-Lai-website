@@ -1,4 +1,19 @@
-export const commentData = [
+export const groups = [
+    {
+        groupname: '老赖王思宇的故事',
+        groupnumber: '1073370108',
+        groupowner: '王的杀手',
+        groupownernumber: '3046728167'
+    },
+    {
+        groupname: 'Next.js技术社区',
+        groupnumber: '743406855',
+        groupowner: '王的杀手',
+        groupownernumber: '3046728167'
+    }
+]
+
+export const comments = [
     {
         content: '哥，你这网站备案咋过的啊，哈哈哈哈哈，审核不得笑死。',
         reply: '曝光老赖是合法的。',
@@ -75,33 +90,19 @@ export const commentData = [
         order: null
     },
     {
-      content: '我是辽宁志在远方网络科技的同事，技术部部长孙晨昊，每天在屋里都是打游戏，不干别的，天天装老好人，然后公司倒闭的时候，王思宇没有源代码，他借口说他也被王思宇坑了，xxx啥的来卖惨，因为当时我也不准备在干这玩意了，就心一软把源代码给他了，后面发现这几个狗东西成立了沈阳高创网络科技，我才回过味来。',
-      reply: null,
-      order: null
+        content: '我是辽宁志在远方网络科技的同事，技术部部长孙晨昊，每天在屋里都是打游戏，不干别的，天天装老好人，然后公司倒闭的时候，王思宇没有源代码，他借口说他也被王思宇坑了，xxx啥的来卖惨，因为当时我也不准备在干这玩意了，就心一软把源代码给他了，后面发现这几个狗东西成立了沈阳高创网络科技，我才回过味来。',
+        reply: null,
+        order: null
     },
     {
-      content: '王思宇自己的电脑上，可以分别看沈阳和大连两个地方的监控，王思宇没事就看监控，然后看完了监控，发现谁有问题就罚款，什么乱七八糟的事。',
-      reply: null,
-      order: null
+        content: '王思宇自己的电脑上，可以分别看沈阳和大连两个地方的监控，王思宇没事就看监控，然后看完了监控，发现谁有问题就罚款，什么乱七八糟的事。',
+        reply: null,
+        order: null
     },
     {
-      content: '当时高勃走的时候，我们还不清楚怎么回事，后来等大概了解情况了，已经快年底了，就基本没再折腾，结果就是基本高勃走以后，工资好像都没发。',
-      reply: '一部分员工发了，另一部分员工没发。',
-      order: null
-    }
-];
+        content: '当时高勃走的时候，我们还不清楚怎么回事，后来等大概了解情况了，已经快年底了，就基本没再折腾，结果就是基本高勃走以后，工资好像都没发。',
+        reply: '一部分员工发了，另一部分员工没发。',
+        order: null
+    },
+]
 
-export const groupData = [
-    {
-      groupname: '老赖王思宇的故事',
-      groupnumber: '1073370108',
-      groupowner: '王的杀手',
-      groupownernumber: '3046728167'
-    },
-    {
-      groupname: 'Next.js技术社区',
-      groupnumber: '743406855',
-      groupowner: '王的杀手',
-      groupownernumber: '3046728167'
-    }
-  ]

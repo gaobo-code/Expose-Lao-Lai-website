@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useLayoutEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Indicator from "./indicator";
 import Reload from "./reload";
@@ -18,26 +18,25 @@ const Content = ({ children }: Props) => {
   // When the page scrolls to a certain height, display control buttons
   useEffect(() => {
     const div = scrollRef.current;
-    const handleScroll = () => {
-      // console.log("Div scroll:", div?.scrollTop);
 
-      if ((div?.scrollTop || 0) > 800) {
-        if (isDisplay === false) {
-          setIsDisplay(true);
-        }
-      } else {
-        if (isDisplay === true) {
-          setIsDisplay(false);
-        }
-      }
+    if (!div) {
+      return;
+    }
+
+    const handleScroll = () => {
+      setIsDisplay(div.scrollTop > 700);
     };
 
-    div?.addEventListener("scroll", handleScroll);
-    return () => div?.removeEventListener("scroll", handleScroll);
-  }, [isDisplay]);
+    handleScroll();
+    div.addEventListener("scroll", handleScroll, { passive: true });
 
-  // reset scroll when route changes
-  useEffect(() => {
+    return () => {
+      div.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  // Reset scroll before paint when the route changes.
+  useLayoutEffect(() => {
     // console.log("Route changed, reset scroll to top");
     const hasVisitedSession = sessionStorage.getItem("hasVisitedSession");
     if (!hasVisitedSession) return;
