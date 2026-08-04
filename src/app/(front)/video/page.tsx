@@ -1,9 +1,12 @@
+import Image from "next/image";
+import Link from "next/link";
 import type { Metadata } from "next";
+import { ArrowRight, Play } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "老赖王思宇的视频",
-  description: "王思宇是一个沈阳软件行业中的骗子，无恶不作，与他合作过的客户录制了视频，谴责他的行为。",
-  keywords: ["沈阳衡源网络科技", "辽宁志在远方网络科技", "大连火石致远科技", "王思宇"],
+  description: "王思宇是一个沈阳软件行业中的老板，骗取项目定金，严重拖欠工资，他的公司包括辽宁志在远方网络科技，大连火石致远科技，沈阳衡源网络科技。",
+  keywords: ["沈阳衡源网络科技", "辽宁志在远方网络科技", "大连火石致远科技", "王思宇", "甄世昊"],
   alternates: {
     canonical: "https://llwsydgs.com/video"
   },
@@ -12,65 +15,67 @@ export const metadata: Metadata = {
   }
 };
 
+const videos = [
+  {
+    key: "daren",
+    title: "程序员索要工资，反被王思宇殴打！",
+    desc: "辽宁志在远方网络科技的一名员工，比较勇敢，去向王思宇索要工资，反被王思宇殴打，嚣张至极！",
+    poster: "/media/video1.webp",
+    label: "员工讲述",
+  },
+  {
+    key: "qianze",
+    title: "与王思宇合作过的客户，谴责王思宇的行为！",
+    desc: "与王思宇合作过的客户，被王思宇欺骗，两个项目干完后拿不到尾款，客户对他的评价，真是小刀拉屁股，开眼了！",
+    poster: "/media/video2.webp",
+    label: "客户讲述",
+  }
+];
+
 export default function Video() {
   return (
-    <div className="w-screen bg-thirdbackground flex flex-col items-center">
-      <section className="w-full xl:w-320 flex flex-col items-center py-4 px-4 box-border tracking-widest h-[calc(100svh-var(--spacing)*14)] b:h-[calc(100svh-var(--spacing)*17)] xl:h-[calc(100svh-var(--spacing)*33)] overflow-hidden">
-        <div className="w-full h-full flex flex-row justify-around items-center">
-          <video
-            className="rounded-xl xl:shadow-lg max-h-full w-[500px] h-[882px]"
-            width={500}
-            height={882}
-            // src="/media/mata.mp4"
-            poster="/media/mata-placeholder.webp"
-            controls
-            autoPlay
-            muted
-            loop
-            playsInline
+    <div className="flex min-h-[calc(100svh-var(--spacing)*42)] w-full justify-center bg-thirdground b:min-h-[calc(100svh-var(--spacing)*33)]">
+      <section className="flex h-full w-full flex-col items-center px-3 py-5 tracking-wider sm:px-5 sm:py-8 b:px-8 b:py-14 xl:w-320">
+        <div className="grid w-full grid-cols-1 gap-y-5 sm:gap-y-6 b:grid-cols-2 b:gap-x-9 b:gap-y-8 b:px-5 xl:gap-x-11">
+          {videos.map((video) => (
+            <Link
+              href={`/video/${video.key}`}
+              key={video.key}
+              className="group overflow-hidden rounded-lg border b:rounded-xl border-[#EEF1F4] bg-articlebackground shadow-[0_6px_16px_rgba(24,39,75,0.05),0_1px_4px_rgba(24,39,75,0.04)] outline-none transition-all duration-400 ease-out hover:-translate-y-1 hover:border-[#D9E7F2] hover:shadow-[0_10px_22px_rgba(24,39,75,0.08),0_3px_8px_rgba(24,39,75,0.05)] focus-visible:ring-2 focus-visible:ring-secondmaincolor focus-visible:ring-offset-2 focus-visible:ring-offset-thirdground active:scale-[0.99] dark:border-[#3F4754] dark:shadow-[0_6px_16px_rgba(0,0,0,0.16),inset_0_1px_0_rgba(255,255,255,0.03)] dark:hover:border-[#566170] dark:hover:shadow-[0_10px_22px_rgba(0,0,0,0.24),inset_0_1px_0_rgba(255,255,255,0.05)]"
+            >
+              <article>
+                <div className="relative aspect-video w-full overflow-hidden bg-[#20252c]">
+                  <Image
+                    src={video.poster}
+                    alt=""
+                    fill
+                    sizes="(min-width: 960px) 40vw, 100vw"
+                    className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.025]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/5 to-black/10" />
+                  <span className="absolute left-3 top-3 rounded-full b:left-4 b:top-4 border border-white/25 bg-black/50 px-2.5 py-1 text-xs font-medium tracking-wider shadow-sm text-white backdrop-blur-sm">
+                    {video.label}
+                  </span>
+                  <span className="absolute left-1/2 top-1/2 grid size-11 -translate-x-1/2 sm:size-12 b:size-14 -translate-y-1/2 place-items-center rounded-full border border-white/40 bg-white/90 text-[#26323c] shadow-lg transition-transform duration-300 group-hover:scale-110 dark:bg-white/85">
+                    <Play aria-hidden="true" className="ml-0.5 size-5 fill-current" />
+                  </span>
+                </div>
 
-          >
-            <source src="/media/mata.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          <div className="text-[0] leading-[2.1] pl-12 box-border line-clamp-20 hidden xl:block justify-cjk">
-            <span className="text-xl">
-              软件开发行业，因有这类人为耻。现代的人啊，良心都让狗吃了，一天天的净干这没屁眼的事。
-            </span>
-            <span className="text-xl">
-              事情是这样的，我们上个月呢，接了两个项目，是同行介绍的，客户是辽宁的，大家都知道，现在很多软件公司会把项目转包出去，
-            </span>
-            <span className="text-xl">
-              我们有些项目，也是别的公司转包给我们的。辽宁志在远方网络科技有限公司，我们给他们做两个项目，一个是出行类APP，一个是
-            </span>
-            <span className="text-xl">
-              加速器APP。项目前期，从需求到思维导图都非常混乱，本着把事做好的态度，我们需求在前期都整理了好几天。然后进入了开发阶段，
-            </span>
-            <span className="text-xl">
-              在沟通的过程中，对方也特别不耐烦，这个也能理解，谁叫我们是乙方呢。既然项目接了，我们肯定是想方设法把项目做完，后面的事呢，
-            </span>
-            <span className="text-xl">
-              真是小刀拉屁股开眼了。这个公司呢，其实就1个人，没有办公场地，也没有员工，这样的公司，也不知道咋接到项目的。项目呢，我们按照
-            </span>
-            <span className="text-xl">
-              要求做完了，刚开始还说，你们这个项目做的挺好，很快就能支付尾款了，这个很快呢，我们一等就等了半个多月，再找呢就各种理由不给
-            </span>
-            <span className="text-xl">
-              支付尾款，两个项目，都是欠我们50%的尾款没结算。在后面呢，就是打电话不接，后来我们技术负责人打电话过去，对方就是一顿怼，
-            </span>
-            <span className="text-xl">
-              态度呢还特别恶劣。我这边微信在联系，已经让他删除了。这公司呢，我上网查了一下，法人呢，已经限制高消费了，项目呢，就是法人
-            </span>
-            <span className="text-xl">
-              联系的我们，公司呢失信人，光自身风险呢73条，司法解析20条，还有客户敢找这样的公司做项目？让他们做项目，能安心吗？一撇一捺
-            </span>
-            <span className="text-xl">
-              是为仁义，借之，立足天地，我呢，奉劝你，最起码做个人。这事呢，也不能怪别人，是我自己的问题，多向内归因，也感谢一起陪伴我的
-            </span>
-            <span className="text-xl">
-              兄弟们，一直能鼎立支持我，也希望大家可以多多转发，能让更多的人看到，别再有同行或者朋友受骗了。
-            </span>
-          </div>
+                <div className="flex min-h-44 flex-col p-4 sm:min-h-46 sm:p-5 b:min-h-50 b:px-6 b:py-5.5">
+                  <h2 className="line-clamp-2 border-b border-b-[#E5E9EE] pb-2.5 text-xl font-semibold leading-[1.45] b:pb-3 b:leading-[1.4] transition-colors duration-400 group-hover:text-secondmaincolor dark:border-b-[#454d59] dark:group-hover:text-maincolor b:text-[22px]">
+                    {video.title}
+                  </h2>
+                  <p className="mt-2.5 line-clamp-3 text-base leading-[1.7] b:mt-3 b:leading-[1.65] text-foreground/90 b:text-[17px]">
+                    {video.desc}
+                  </p>
+                  <span className="mt-auto flex items-center justify-end gap-2 pt-4 text-sm b:pt-5 b:text-[15px] font-medium text-secondmaincolor dark:text-maincolor">
+                    观看视频
+                    <ArrowRight aria-hidden="true" className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  </span>
+                </div>
+              </article>
+            </Link>
+          ))}
         </div>
       </section>
     </div>
