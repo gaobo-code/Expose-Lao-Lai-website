@@ -20,10 +20,10 @@ export default function Video() {
       <Link
               href="/video"
               aria-label="返回视频列表"
-              className="absolute left-4 top-4 z-20 inline-flex size-10 items-center justify-center rounded-lg border border-[#DDE3E9] bg-articlebackground/90 text-foreground shadow-[0_2px_8px_rgba(24,39,75,0.08)] backdrop-blur-md transition-all duration-300 hover:border-[#C5D4DF] hover:bg-articlebackground hover:text-secondmaincolor focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondmaincolor b:left-[calc(50%-250px)] b:h-10 b:w-auto b:gap-2 b:px-4 xl:left-[calc(50%-40rem+1rem)] dark:border-[#444D59] dark:bg-articlebackground/90 dark:shadow-[0_2px_8px_rgba(0,0,0,0.20)] dark:hover:border-[#606B79] dark:hover:bg-articlebackground dark:hover:text-maincolor"
+              className="absolute left-4 top-4 z-20 inline-flex size-10 items-center justify-center rounded-lg border border-[#DDE3E9] bg-articlebackground/90 text-foreground shadow-[0_2px_8px_rgba(24,39,75,0.08)] backdrop-blur-md transition-all duration-300 hover:border-[#C5D4DF] hover:bg-articlebackground hover:text-secondmaincolor focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondmaincolor md:left-[calc(50%-350px)] md:h-10 md:w-auto md:gap-2 md:px-4 xl:left-[calc(50%-40rem+1rem)] dark:border-[#444D59] dark:bg-articlebackground/90 dark:shadow-[0_2px_8px_rgba(0,0,0,0.20)] dark:hover:border-[#606B79] dark:hover:bg-articlebackground dark:hover:text-maincolor"
             >
               <ArrowLeft aria-hidden="true" className="size-4" />
-              <span className="hidden b:inline">返回</span>
+              <span className="hidden md:inline">返回</span>
             </Link>
       <section className="w-full xl:w-320 flex flex-col items-center py-4 px-4 box-border tracking-widest h-[calc(100svh-var(--spacing)*14)] b:h-[calc(100svh-var(--spacing)*17)] xl:h-[calc(100svh-var(--spacing)*33)] overflow-hidden">
         <div className="w-full h-full flex flex-row justify-around items-center">
