@@ -45,6 +45,7 @@ export default function DivinationPage() {
   const [chosenCard, setChosenCard] = useState<number | null>(null);
   const [cardHoverEnabled, setCardHoverEnabled] = useState(false);
   const [initialAskTop, setInitialAskTop] = useState<number | null>(null);
+  const [keyboardOpen, setKeyboardOpen] = useState(false);
   const askRef = useRef<HTMLDivElement>(null);
   const timers = useRef<number[]>([]);
 
@@ -69,6 +70,28 @@ export default function DivinationPage() {
     return () => document.body.classList.remove("divination-page-active");
   }, []);
 
+  useEffect(() => {
+    const viewport = window.visualViewport;
+    let fullViewportHeight = viewport?.height ?? window.innerHeight;
+    const keyboardThreshold = 80;
+
+    const detectKeyboard = () => {
+      const visibleHeight = viewport?.height ?? window.innerHeight;
+
+      if (visibleHeight > fullViewportHeight) fullViewportHeight = visibleHeight;
+      setKeyboardOpen(fullViewportHeight - visibleHeight > keyboardThreshold);
+    };
+
+    detectKeyboard();
+    viewport?.addEventListener("resize", detectKeyboard);
+    window.addEventListener("resize", detectKeyboard);
+
+    return () => {
+      viewport?.removeEventListener("resize", detectKeyboard);
+      window.removeEventListener("resize", detectKeyboard);
+    };
+  }, []);
+
   const chooseCard = (index: number) => {
     if (chosenCard !== null) return;
 
@@ -84,7 +107,7 @@ export default function DivinationPage() {
   };
 
   return (
-    <main className={`${styles.game} ${magic.fontScope} ${polish.scene}`}>
+    <main className={`${styles.game} ${keyboardOpen ? styles.keyboardOpen : ""} ${magic.fontScope} ${polish.scene}`}>
       <div className={styles.backdrop} aria-hidden="true" />
       <div className={styles.vignette} aria-hidden="true" />
       <div className={effects.aurora} aria-hidden="true" />

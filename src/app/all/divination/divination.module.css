@@ -21,56 +21,52 @@
 }
 
 /* 软键盘会缩短动态视口；键盘收起后该媒体查询自动失效。 */
-@media (hover: none) and (pointer: coarse) and (max-height: 600px) {
-    .game:has(.inputBox textarea:focus) .header,
-    .game:has(.inputBox textarea:focus) .back,
-    .game:has(.inputBox textarea:focus) .shell footer {
+    .keyboardOpen .header,
+    .keyboardOpen .back,
+    .keyboardOpen .shell footer {
         display: none;
     }
 
-    .game:has(.inputBox textarea:focus) .shell {
+    .keyboardOpen .shell {
         grid-template-rows: 1fr;
         padding: 6px 14px;
     }
 
-    .game:has(.inputBox textarea:focus) .content {
+    .keyboardOpen .content {
         padding: 0;
     }
 
-    .game:has(.inputBox textarea:focus) .askPositionLocked {
+    .keyboardOpen .askPositionLocked {
         top: var(--ask-keyboard-top);
     }
 
-    .game:has(.inputBox textarea:focus) .moon {
+    .keyboardOpen .moon {
         width: min(72px, calc(var(--layout-height) * .18));
         height: min(72px, calc(var(--layout-height) * .18));
         margin-bottom: 5px;
         font-size: min(38px, calc(var(--layout-height) * .10));
     }
 
-    .game:has(.inputBox textarea:focus) .content h2 {
+    .keyboardOpen .content h2 {
         font-size: clamp(18px, calc(var(--layout-height) * .06), 24px);
     }
 
-    .game:has(.inputBox textarea:focus) .content p {
+    .keyboardOpen .content p {
         margin: 2px 0;
         line-height: 1.35;
     }
 
-    .game:has(.inputBox textarea:focus) .inputBox {
+    .keyboardOpen .inputBox {
         margin: 7px auto;
     }
 
-    .game:has(.inputBox textarea:focus) .inputBox textarea {
+    .keyboardOpen .inputBox textarea {
         height: clamp(64px, calc(var(--layout-height) * .23), 82px);
     }
 
-    .game:has(.inputBox textarea:focus) .goldButton {
+    .keyboardOpen .goldButton {
         height: 40px;
     }
-}
-
-
 .backdrop {
     position: absolute;
     inset: 0;
@@ -693,7 +689,7 @@
         letter-spacing: .02em
     }
 
-    .game:has(.inputBox textarea:focus) .inputBox textarea {
+    .keyboardOpen .inputBox textarea {
         height: 94px
     }
 
