@@ -1,6 +1,6 @@
 "use client";
 
-import { type CSSProperties, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, Sparkles } from "lucide-react";
 import background from "./background.module.css";
@@ -45,13 +45,6 @@ export default function DivinationPage() {
   const [chosenCard, setChosenCard] = useState<number | null>(null);
   const [cardHoverEnabled, setCardHoverEnabled] = useState(false);
   const timers = useRef<number[]>([]);
-  const questionFocused = useRef(false);
-  const updateViewportRef = useRef<(() => void) | null>(null);
-  const [viewport, setViewport] = useState<{
-    open: boolean;
-    height: number | null;
-    offsetTop: number;
-  }>({ open: false, height: null, offsetTop: 0 });
 
   useEffect(() => {
     return () => {
@@ -63,44 +56,6 @@ export default function DivinationPage() {
     document.body.classList.add("divination-page-active");
     return () => document.body.classList.remove("divination-page-active");
   }, []);
-
-  useEffect(() => {
-    const visualViewport = window.visualViewport;
-    if (!visualViewport) return;
-    let baselineHeight = Math.max(visualViewport.height, window.innerHeight);
-    let previousWidth = visualViewport.width;
-
-    const updateKeyboardState = () => {
-      const visibleHeight = visualViewport.height;
-      if (Math.abs(visualViewport.width - previousWidth) > 40) {
-        previousWidth = visualViewport.width;
-        baselineHeight = Math.max(visibleHeight, window.innerHeight);
-      }
-      if (!questionFocused.current) baselineHeight = Math.max(baselineHeight, visibleHeight);
-      const lostHeight = baselineHeight - visibleHeight;
-      const keyboardOpen = questionFocused.current
-        && lostHeight > Math.max(120, baselineHeight * 0.18);
-      setViewport((current) => {
-        const nextHeight = Math.round(visibleHeight);
-        const nextOffsetTop = Math.round(visualViewport.offsetTop);
-        if (current.open === keyboardOpen && current.height === nextHeight && current.offsetTop === nextOffsetTop) return current;
-        return { open: keyboardOpen, height: nextHeight, offsetTop: nextOffsetTop };
-      });
-    };
-
-    updateViewportRef.current = updateKeyboardState;
-    updateKeyboardState();
-    visualViewport.addEventListener("resize", updateKeyboardState);
-    visualViewport.addEventListener("scroll", updateKeyboardState);
-    window.addEventListener("orientationchange", updateKeyboardState);
-    return () => {
-      updateViewportRef.current = null;
-      visualViewport.removeEventListener("resize", updateKeyboardState);
-      visualViewport.removeEventListener("scroll", updateKeyboardState);
-      window.removeEventListener("orientationchange", updateKeyboardState);
-    };
-  }, []);
-
 
   const chooseCard = (index: number) => {
     if (chosenCard !== null) return;
@@ -117,13 +72,7 @@ export default function DivinationPage() {
   };
 
   return (
-    <main
-      className={`${styles.game} ${viewport.open ? styles.keyboardOpen : ""} ${magic.fontScope} ${polish.scene}`}
-      style={viewport.height === null ? undefined : {
-        "--visual-viewport-height": `${viewport.height}px`,
-        "--visual-viewport-offset-top": `${viewport.offsetTop}px`,
-      } as CSSProperties}
-    >
+    <main className={`${styles.game} ${magic.fontScope} ${polish.scene}`}>
       <div className={styles.backdrop} aria-hidden="true" />
       <div className={styles.vignette} aria-hidden="true" />
       <div className={effects.aurora} aria-hidden="true" />
@@ -162,14 +111,6 @@ export default function DivinationPage() {
                   className={polish.questionBox}
                   placeholder="例如：这件事会有一个好结果吗？"
                   aria-label="输入占卜问题"
-                  onFocus={() => {
-                    questionFocused.current = true;
-                    window.requestAnimationFrame(() => updateViewportRef.current?.());
-                  }}
-                  onBlur={() => {
-                    questionFocused.current = false;
-                    updateViewportRef.current?.();
-                  }}
                   onKeyDown={(event) => {
                     if ((event.key === "Enter" || event.key === " ") && !event.nativeEvent.isComposing) {
                       event.preventDefault();
