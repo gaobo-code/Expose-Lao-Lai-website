@@ -225,6 +225,16 @@
     animation: fadeUp .5s both
 }
 
+.askPositionLocked {
+    position: fixed;
+    z-index: 3;
+    left: 50%;
+    width: min(1080px, calc(100% - 48px));
+    margin-top: 0;
+    transform: translateX(-50%);
+    animation: none;
+}
+
 .moon {
     position: relative;
     width: clamp(100px, calc(var(--layout-height) * .16), 150px);
@@ -651,6 +661,11 @@
 
     .ask {
         margin-top: -4px
+    }
+
+    .askPositionLocked {
+        width: calc(100% - 28px);
+        margin-top: 0
     }
 
     .moon {
