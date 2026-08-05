@@ -45,165 +45,61 @@ export default function DivinationPage() {
   const [chosenCard, setChosenCard] = useState<number | null>(null);
   const [cardHoverEnabled, setCardHoverEnabled] = useState(false);
   const timers = useRef<number[]>([]);
-  const keyboardWasOpen = useRef(false);
-  const contentRef = useRef<HTMLElement>(null);
-  const contentRevealTimer = useRef<number | null>(null);
-  const keyboardIsOpen = useRef(false);
-  const keyboardTransitioning = useRef(false);
-  const [keyboardViewport, setKeyboardViewport] = useState<{
+  const questionFocused = useRef(false);
+  const updateViewportRef = useRef<(() => void) | null>(null);
+  const [viewport, setViewport] = useState<{
     open: boolean;
     height: number | null;
-    normalHeight: number | null;
-  }>({ open: false, height: null, normalHeight: null });
-  const canUseSoftKeyboard = () =>
-    navigator.maxTouchPoints > 0 && window.matchMedia("(pointer: coarse)").matches;
-
-  const hideContentBeforeKeyboard = () => {
-    if (!canUseSoftKeyboard()) return;
-    keyboardTransitioning.current = true;
-    contentRef.current?.classList.add(styles.contentHidden);
-    if (contentRevealTimer.current !== null) {
-      window.clearTimeout(contentRevealTimer.current);
-    }
-    contentRevealTimer.current = window.setTimeout(() => {
-      if (keyboardTransitioning.current) {
-        keyboardTransitioning.current = false;
-        contentRef.current?.classList.remove(styles.contentHidden);
-      }
-    }, 700);
-  };
+    offsetTop: number;
+  }>({ open: false, height: null, offsetTop: 0 });
 
   useEffect(() => {
     return () => {
       timers.current.forEach(window.clearTimeout);
-      if (contentRevealTimer.current !== null) {
-        window.clearTimeout(contentRevealTimer.current);
-      }
     };
   }, []);
-  
+
   useEffect(() => {
     document.body.classList.add("divination-page-active");
-    const scrollContainer = document.querySelector<HTMLElement>("[data-content-scroll-container]");
-    if (scrollContainer) scrollContainer.scrollTop = 0;
     return () => document.body.classList.remove("divination-page-active");
   }, []);
 
-
   useEffect(() => {
-    const viewport = window.visualViewport;
-    if (!viewport) return;
-    let baselineHeight = Math.max(viewport.height, window.innerHeight);
-    let previousWidth = viewport.width;
-    const revealContentAfterLayout = () => {
-      if (contentRevealTimer.current !== null) {
-        window.clearTimeout(contentRevealTimer.current);
-      }
-      contentRevealTimer.current = window.setTimeout(() => {
-        window.requestAnimationFrame(() => {
-          window.requestAnimationFrame(() => {
-            if (keyboardIsOpen.current && contentRef.current) {
-              void contentRef.current.offsetHeight;
-              contentRef.current.classList.remove(styles.contentHidden);
-            }
-          });
-        });
-      }, 120);
-    };
+    const visualViewport = window.visualViewport;
+    if (!visualViewport) return;
+    let baselineHeight = Math.max(visualViewport.height, window.innerHeight);
+    let previousWidth = visualViewport.width;
 
     const updateKeyboardState = () => {
-      const visibleHeight = viewport.height;
-      let baselineChanged = false;
-      if (Math.abs(viewport.width - previousWidth) > 40) {
-        previousWidth = viewport.width;
+      const visibleHeight = visualViewport.height;
+      if (Math.abs(visualViewport.width - previousWidth) > 40) {
+        previousWidth = visualViewport.width;
         baselineHeight = Math.max(visibleHeight, window.innerHeight);
-        baselineChanged = true;
       }
+      if (!questionFocused.current) baselineHeight = Math.max(baselineHeight, visibleHeight);
       const lostHeight = baselineHeight - visibleHeight;
-      const keyboardOpen = lostHeight > Math.max(120, baselineHeight * 0.18);
-      const hideKeyboardTransition = canUseSoftKeyboard();
-      if (!keyboardOpen) baselineHeight = Math.max(baselineHeight, visibleHeight);
-      const keyboardWasVisuallyOpen = keyboardIsOpen.current;
-      keyboardIsOpen.current = keyboardOpen;
-      if (keyboardOpen && hideKeyboardTransition) {
-        keyboardTransitioning.current = false;
-        contentRef.current?.classList.add(styles.contentHidden);
-        revealContentAfterLayout();
-      } else if (keyboardWasVisuallyOpen || !hideKeyboardTransition) {
-        keyboardTransitioning.current = false;
-        if (contentRevealTimer.current !== null) {
-          window.clearTimeout(contentRevealTimer.current);
-          contentRevealTimer.current = null;
-        }
-        contentRef.current?.classList.remove(styles.contentHidden);
-      } else if (!keyboardTransitioning.current) {
-        contentRef.current?.classList.remove(styles.contentHidden);
-      }
-      setKeyboardViewport((current) => {
+      const keyboardOpen = questionFocused.current
+        && lostHeight > Math.max(120, baselineHeight * 0.18);
+      setViewport((current) => {
         const nextHeight = Math.round(visibleHeight);
-        const normalHeight = baselineChanged || current.normalHeight === null
-          ? Math.round(baselineHeight)
-          : current.normalHeight;
-        if (current.open === keyboardOpen && current.height === nextHeight && current.normalHeight === normalHeight) return current;
-        return { open: keyboardOpen, height: nextHeight, normalHeight };
+        const nextOffsetTop = Math.round(visualViewport.offsetTop);
+        if (current.open === keyboardOpen && current.height === nextHeight && current.offsetTop === nextOffsetTop) return current;
+        return { open: keyboardOpen, height: nextHeight, offsetTop: nextOffsetTop };
       });
     };
 
+    updateViewportRef.current = updateKeyboardState;
     updateKeyboardState();
-    viewport.addEventListener("resize", updateKeyboardState);
-    viewport.addEventListener("scroll", updateKeyboardState);
+    visualViewport.addEventListener("resize", updateKeyboardState);
+    visualViewport.addEventListener("scroll", updateKeyboardState);
     window.addEventListener("orientationchange", updateKeyboardState);
     return () => {
-      viewport.removeEventListener("resize", updateKeyboardState);
-      viewport.removeEventListener("scroll", updateKeyboardState);
+      updateViewportRef.current = null;
+      visualViewport.removeEventListener("resize", updateKeyboardState);
+      visualViewport.removeEventListener("scroll", updateKeyboardState);
       window.removeEventListener("orientationchange", updateKeyboardState);
     };
   }, []);
-
-  useEffect(() => {
-    if (keyboardViewport.height !== null) {
-      document.body.style.setProperty("--divination-viewport-height", `${keyboardViewport.height}px`);
-    }
-    document.body.classList.toggle("divination-keyboard-open", keyboardViewport.open);
-    return () => {
-      document.body.classList.remove("divination-keyboard-open");
-      document.body.style.removeProperty("--divination-viewport-height");
-    };
-  }, [keyboardViewport.open, keyboardViewport.height]);
-
-  useEffect(() => {
-    const justClosed = keyboardWasOpen.current && !keyboardViewport.open;
-    keyboardWasOpen.current = keyboardViewport.open;
-    if (!justClosed) return;
-
-    const resetPagePosition = () => {
-      const scrollContainer = document.querySelector<HTMLElement>("[data-content-scroll-container]");
-      let element: HTMLElement | null = scrollContainer;
-      while (element) {
-        element.scrollTop = 0;
-        element.scrollLeft = 0;
-        element = element.parentElement;
-      }
-      document.documentElement.scrollTop = 0;
-      document.body.scrollTop = 0;
-      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-    };
-
-    resetPagePosition();
-    const frameOne = window.requestAnimationFrame(resetPagePosition);
-    const frameTwo = window.requestAnimationFrame(() => {
-      window.requestAnimationFrame(resetPagePosition);
-    });
-    const delayedResets = [80, 180, 320].map((delay) =>
-      window.setTimeout(resetPagePosition, delay)
-    );
-
-    return () => {
-      window.cancelAnimationFrame(frameOne);
-      window.cancelAnimationFrame(frameTwo);
-      delayedResets.forEach(window.clearTimeout);
-    };
-  }, [keyboardViewport.open]);
 
 
   const chooseCard = (index: number) => {
@@ -222,10 +118,10 @@ export default function DivinationPage() {
 
   return (
     <main
-      className={`${styles.game} ${keyboardViewport.open ? styles.keyboardOpen : ""} ${magic.fontScope} ${polish.scene}`}
-      style={keyboardViewport.height === null || keyboardViewport.normalHeight === null ? undefined : {
-        "--visual-viewport-height": `${keyboardViewport.height}px`,
-        "--normal-viewport-height": `${keyboardViewport.normalHeight}px`,
+      className={`${styles.game} ${viewport.open ? styles.keyboardOpen : ""} ${magic.fontScope} ${polish.scene}`}
+      style={viewport.height === null ? undefined : {
+        "--visual-viewport-height": `${viewport.height}px`,
+        "--visual-viewport-offset-top": `${viewport.offsetTop}px`,
       } as CSSProperties}
     >
       <div className={styles.backdrop} aria-hidden="true" />
@@ -253,7 +149,7 @@ export default function DivinationPage() {
           <div className={effects.sigil} aria-hidden="true"><span>✦</span><b>☾</b><span>✦</span></div>
         </header>
 
-        <section ref={contentRef} className={styles.content}>
+        <section className={styles.content}>
           {step === "question" && (
             <div className={`${styles.ask} ${polish.panel}`}>
               <div className={styles.moon} aria-hidden="true">☾<i /><i /><i /></div>
@@ -266,7 +162,14 @@ export default function DivinationPage() {
                   className={polish.questionBox}
                   placeholder="例如：这件事会有一个好结果吗？"
                   aria-label="输入占卜问题"
-                  onFocus={hideContentBeforeKeyboard}
+                  onFocus={() => {
+                    questionFocused.current = true;
+                    window.requestAnimationFrame(() => updateViewportRef.current?.());
+                  }}
+                  onBlur={() => {
+                    questionFocused.current = false;
+                    updateViewportRef.current?.();
+                  }}
                   onKeyDown={(event) => {
                     if ((event.key === "Enter" || event.key === " ") && !event.nativeEvent.isComposing) {
                       event.preventDefault();

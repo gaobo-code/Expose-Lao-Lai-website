@@ -2,34 +2,25 @@
     --gold: #e6c679;
     position: fixed;
     z-index: 1;
-    top: 56px;
+    top: calc(var(--visual-viewport-offset-top, 0px) + 56px);
     right: 0;
     left: 0;
-    bottom: 0;
+    bottom: auto;
     width: 100%;
-    --layout-height: var(--normal-viewport-height, 100svh);
-    height: calc(var(--normal-viewport-height, 100svh) - 56px);
-    min-height: 560px;
+    --layout-height: calc(var(--visual-viewport-height, 100dvh) - 56px);
+    height: var(--layout-height);
+    min-height: 0;
     overflow: hidden;
+    overscroll-behavior: none;
     color: #f8f3e7;
     background: #070b10
 }
 .game.keyboardOpen {
-    --layout-height: var(--visual-viewport-height);
-    top: 56px;
-    bottom: auto;
-    height: calc(var(--visual-viewport-height) - 56px);
-    min-height: 0;
-}
-
-:global(body.divination-keyboard-open > header + div) {
-    height: var(--divination-viewport-height, 100dvh);
-    padding-top: 0 !important;
+    --layout-height: calc(var(--visual-viewport-height, 100dvh) - 56px);
 }
 
 :global(body.divination-page-active [data-content-scroll-container]) {
-    overflow-x: clip !important;
-    overflow-y: clip !important;
+    overflow: clip !important;
     overscroll-behavior: none;
 }
 
@@ -226,10 +217,6 @@
     display: grid;
     place-items: center;
     padding: 12px 0
-}
-
-.contentHidden {
-    opacity: 0;
 }
 
 .ask,
@@ -574,13 +561,14 @@
 
 @media(min-width:960px) {
     .game {
-        top: 68px;
-        height: calc(var(--normal-viewport-height, 100svh) - 68px)
+        --layout-height: calc(var(--visual-viewport-height, 100dvh) - 68px);
+        top: calc(var(--visual-viewport-offset-top, 0px) + 68px);
+        height: var(--layout-height)
     }
 
     .game.keyboardOpen {
-        top: 68px;
-        height: calc(var(--visual-viewport-height) - 68px)
+        --layout-height: calc(var(--visual-viewport-height, 100dvh) - 68px);
+        height: var(--layout-height)
     }
 }
 
@@ -629,7 +617,7 @@
 }
 @media(max-width:640px) {
     .game {
-        min-height: 520px
+        min-height: 0
     }
 
     .backdrop {
