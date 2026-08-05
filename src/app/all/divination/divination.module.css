@@ -37,6 +37,10 @@
         padding: 0;
     }
 
+    .game:has(.inputBox textarea:focus) .askPositionLocked {
+        top: var(--ask-keyboard-top);
+    }
+
     .game:has(.inputBox textarea:focus) .moon {
         width: min(72px, calc(var(--layout-height) * .18));
         height: min(72px, calc(var(--layout-height) * .18));
@@ -228,6 +232,7 @@
 .askPositionLocked {
     position: fixed;
     z-index: 3;
+    top: var(--ask-initial-top);
     left: 50%;
     width: min(1080px, calc(100% - 48px));
     margin-top: 0;

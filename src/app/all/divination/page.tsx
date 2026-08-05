@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState, type CSSProperties } from "react";
 import Link from "next/link";
 import { ArrowLeft, Sparkles } from "lucide-react";
 import background from "./background.module.css";
@@ -27,8 +27,6 @@ const FORTUNES: Fortune[] = [
 ];
 
 const CARD_INDEXES = [0, 1, 2] as const;
-const KEYBOARD_ASK_POSITION_RATIO = 0.4;
-const KEYBOARD_HEIGHT_THRESHOLD = 120;
 const normalizeQuestion = (value: string) =>
   Array.from(value.replace(/\s+/g, "")).slice(0, 50).join("");
 
@@ -47,9 +45,7 @@ export default function DivinationPage() {
   const [chosenCard, setChosenCard] = useState<number | null>(null);
   const [cardHoverEnabled, setCardHoverEnabled] = useState(false);
   const [initialAskTop, setInitialAskTop] = useState<number | null>(null);
-  const [isKeyboardOpen, setIsKeyboardOpen] = useState(false);
   const askRef = useRef<HTMLDivElement>(null);
-  const initialViewportHeight = useRef<number | null>(null);
   const timers = useRef<number[]>([]);
 
   useLayoutEffect(() => {
@@ -59,28 +55,8 @@ export default function DivinationPage() {
     const transform = window.getComputedStyle(ask).transform;
     const animatedTranslateY = transform === "none" ? 0 : new DOMMatrixReadOnly(transform).m42;
 
-    initialViewportHeight.current = window.visualViewport?.height ?? window.innerHeight;
     setInitialAskTop(ask.getBoundingClientRect().top - animatedTranslateY);
   }, [initialAskTop]);
-
-  useEffect(() => {
-    const viewport = window.visualViewport;
-    if (!viewport) return;
-
-    const updateKeyboardState = () => {
-      const initialHeight = initialViewportHeight.current;
-      const questionIsFocused = document.activeElement?.id === "question";
-
-      setIsKeyboardOpen(
-        questionIsFocused
-        && initialHeight !== null
-        && initialHeight - viewport.height > KEYBOARD_HEIGHT_THRESHOLD,
-      );
-    };
-
-    viewport.addEventListener("resize", updateKeyboardState);
-    return () => viewport.removeEventListener("resize", updateKeyboardState);
-  }, []);
 
   useEffect(() => {
     return () => {
@@ -140,8 +116,9 @@ export default function DivinationPage() {
               ref={askRef}
               className={`${styles.ask} ${initialAskTop !== null ? styles.askPositionLocked : ""} ${polish.panel}`}
               style={initialAskTop === null ? undefined : {
-                top: `${isKeyboardOpen ? initialAskTop * KEYBOARD_ASK_POSITION_RATIO : initialAskTop}px`,
-              }}
+                "--ask-initial-top": `${initialAskTop}px`,
+                "--ask-keyboard-top": `${initialAskTop * 0.4}px`,
+              } as CSSProperties}
             >
               <div className={styles.moon} aria-hidden="true">☾<i /><i /><i /></div>
               <h2>请写下心中所问</h2>
@@ -153,7 +130,6 @@ export default function DivinationPage() {
                   className={polish.questionBox}
                   placeholder="例如：这件事会有一个好结果吗？"
                   aria-label="输入占卜问题"
-                  onBlur={() => setIsKeyboardOpen(false)}
                   onKeyDown={(event) => {
                     if ((event.key === "Enter" || event.key === " ") && !event.nativeEvent.isComposing) {
                       event.preventDefault();
