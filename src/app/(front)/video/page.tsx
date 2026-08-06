@@ -50,6 +50,7 @@ export default function Video() {
                     alt=""
                     fill
                     sizes="(min-width: 960px) 40vw, 100vw"
+                    priority
                     className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.025]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/5 to-black/10" />
