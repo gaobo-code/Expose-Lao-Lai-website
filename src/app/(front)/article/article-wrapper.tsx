@@ -3,7 +3,7 @@
 import { ChevronLeftIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import ColorTextArea from "./color-text-area";
-import { useState, useRef, useEffect } from "react";
+import { useEffect, useState } from "react";
 import clsx from "clsx";
 
 type Props = {
@@ -12,22 +12,15 @@ type Props = {
 
 export default function ArticleWrapper({ children }: Props) {
 
-    const [color, setColor] = useState<string | null>(null);
+    const [color, setColor] = useState("normal");
 
     useEffect(() => {
         const articleColor = sessionStorage.getItem("articleColor");
-        if (articleColor) {
-            setColor(articleColor);
-        } else {
-            setColor('normal');
+        if (["normal", "text1", "text2", "text3", "text4"].includes(articleColor ?? "")) {
+            setColor(articleColor!);
         }
 
     }, []);
-
-    if (!color) {
-        return <div className="w-full h-[calc(100svh-var(--spacing)*14)] b:h-[calc(100svh-var(--spacing)*17)]">
-        </div> 
-    }
 
     return (
         <>
