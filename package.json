@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "sitemap": "next build && next-sitemap",
-    "font:subset": "node ./src/lib/font-subset.js"
+    "font:subset": "node ./src/lib/font-subset.js",
+    "font:subset2": "node ./src/lib/font-subset2.js"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
