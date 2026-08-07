@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "骗子公司",
   ],
   alternates: {
-    canonical: "https://llwsydgs.com/article/ouji"
+    canonical: "https://llwsydgs.cn/article/ouji"
   },
   openGraph: {
     title: "骗子偶寄和其小号",

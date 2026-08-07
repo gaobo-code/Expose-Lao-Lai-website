@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "电信诈骗"
   ],
   alternates: {
-    canonical: "https://llwsydgs.com/article/heike"
+    canonical: "https://llwsydgs.cn/article/heike"
   },
   openGraph: {
     title: "王思宇派黑客奇袭我网站服务器全程",

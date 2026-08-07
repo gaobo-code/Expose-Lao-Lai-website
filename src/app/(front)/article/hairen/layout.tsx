@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "电信诈骗"
   ],
   alternates: {
-    canonical: "https://llwsydgs.com/article/hairen"
+    canonical: "https://llwsydgs.cn/article/hairen"
   },
   openGraph: {
     title: "QQ群的骇人言论",

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "与王思宇合作过的客户，被王思宇欺骗，两个项目干完后拿不到尾款，客户对他的评价，真是小刀拉屁股，开眼了！",
   keywords: ["沈阳衡源网络科技", "辽宁志在远方网络科技", "大连火石致远科技", "王思宇", "甄世昊"],
   alternates: {
-    canonical: "https://llwsydgs.com/video/qianze"
+    canonical: "https://llwsydgs.cn/video/qianze"
   },
   openGraph: {
     url: "https://llwsydgs.com/video/qianze",

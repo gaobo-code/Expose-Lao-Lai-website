@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "老赖王思宇的故事",
-  alternates: { canonical: "https://llwsydgs.com/all" },
+  alternates: { canonical: "https://llwsydgs.cn/all" },
   openGraph: { url: "https://llwsydgs.com/all" },
   robots: { index: false, follow: false },
 };

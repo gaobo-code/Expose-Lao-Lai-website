@@ -23,7 +23,7 @@ const zcool = localFont({
 export const metadata: Metadata = {
   title: "老赖王思宇的故事",
   alternates: {
-    canonical: "https://llwsydgs.com/all"
+    canonical: "https://llwsydgs.cn/all"
   },
   openGraph: {
     title: "老赖王思宇的休闲馆",

@@ -6,7 +6,7 @@ import { comments } from "@/lib/data";
 export const metadata: Metadata = {
   title: "老赖王思宇的故事",
   alternates: {
-    canonical: "https://llwsydgs.com/comment"
+    canonical: "https://llwsydgs.cn/comment"
   },
   openGraph: {
     url: "https://llwsydgs.com/comment",

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "辽宁志在远方网络科技的一名员工，比较勇敢，去向王思宇索要工资，反被王思宇殴打，嚣张至极！",
   keywords: ["沈阳衡源网络科技", "辽宁志在远方网络科技", "大连火石致远科技", "王思宇", "甄世昊"],
   alternates: {
-    canonical: "https://llwsydgs.com/video/daren"
+    canonical: "https://llwsydgs.cn/video/daren"
   },
   openGraph: {
     url: "https://llwsydgs.com/video/daren",

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: "王思宇是一个沈阳软件行业中的老板，甄世昊是他的助手，他们的公司包括辽宁志在远方网络科技，大连火石致远科技，沈阳衡源网络科技。",
   keywords: ["沈阳衡源网络科技", "辽宁志在远方网络科技", "大连火石致远科技", "甄世昊"],
   alternates: {
-    canonical: "https://llwsydgs.com/image"
+    canonical: "https://llwsydgs.cn/image"
   },
   openGraph: {
     url: "https://llwsydgs.com/image",

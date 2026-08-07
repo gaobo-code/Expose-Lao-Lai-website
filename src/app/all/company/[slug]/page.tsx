@@ -53,7 +53,7 @@ export async function generateMetadata({ params: paramsPromise }: Params): Promi
 
   return {
     title: post.title,
-    alternates: { canonical: `https://llwsydgs.com/all/company/${slug}` },
+    alternates: { canonical: `https://llwsydgs.cn/all/company/${slug}` },
     openGraph: { title: post.title, url: `https://llwsydgs.com/all/company/${slug}` },
     twitter: { title: post.title },
     robots: {

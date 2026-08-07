@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "趣味问答",
   description: "挑战趣味问答，答对问题即可揍大灰狼！",
-  alternates: { canonical: "https://llwsydgs.com/all/quiz" },
+  alternates: { canonical: "https://llwsydgs.cn/all/quiz" },
   openGraph: {
     title: "趣味问答",
     description: "挑战趣味问答，答对问题即可揍大灰狼！",

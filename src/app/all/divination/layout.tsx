@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "占卜屋",
   description: "在线占卜屋，体验塔罗牌占卜、每日运势和趣味占卜，探索未知，获得属于你的专属解读。",
-  alternates: { canonical: "https://llwsydgs.com/all/divination" },
+  alternates: { canonical: "https://llwsydgs.cn/all/divination" },
   openGraph: {
     title: "占卜屋",
     description: "在线占卜屋，体验塔罗牌占卜、每日运势和趣味占卜，探索未知，获得属于你的专属解读。",
