@@ -104,5 +104,10 @@ export const comments = [
         reply: '一部分员工发了，另一部分员工没发。',
         order: null
     },
+    {
+        content: '现在扫黑除恶严打，搜集搜集证据干他，别把他当老赖了，给他往黑恶势力上搞，按你说的这行为已经完全超出老赖了。',
+        reply: null,
+        order: null
+    }
 ]
 

@@ -17,6 +17,14 @@ export const metadata: Metadata = {
 
 export const imageData = [
   {
+    url: "/media/wangsiyu2.webp",
+    title: "王思宇的照片",
+    description:
+      "这就是王思宇，活跃在沈阳、大连一带，看他那嚣张的样子，一看就是恶棍。王思宇平时不直接参与管理，而是在幕后遥控指挥！",
+    width: 616,
+    height: 693,
+  },
+  {
     url: "/media/zhenshihao.webp",
     title: "甄世昊的照片",
     description:
