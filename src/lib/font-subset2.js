@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const { execSync } = require("child_process");
+const { execFileSync } = require("child_process");
 
 const ROOT = process.cwd();
 
@@ -80,9 +80,16 @@ function main(){
 
   console.log("Unicode list saved:", UNICODE_FILE);
 
-  const cmd = `pyftsubset "${FONT_INPUT}" --output-file="${FONT_OUTPUT}" --flavor=woff2 --unicodes-file="${UNICODE_FILE}"`;
+  const python = process.env.PYTHON || "python";
 
-  execSync(cmd,{stdio:"inherit"});
+  execFileSync(python, [
+    "-m",
+    "fontTools.subset",
+    FONT_INPUT,
+    `--output-file=${FONT_OUTPUT}`,
+    "--flavor=woff2",
+    `--unicodes-file=${UNICODE_FILE}`,
+  ], { stdio: "inherit" });
 
   console.log("Font subset generated:", FONT_OUTPUT);
 }

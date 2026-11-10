@@ -15,7 +15,7 @@ const QUESTION_BANK: Question[] = [
   { question: "辽宁志在远方网络科技的厂花是谁？", options: ["白鹿", "杨紫", "姜雪"], answer: 2 },
   { question: "以下哪种动物不是鱼类？", options: ["海豚", "海马", "金枪鱼"], answer: 0 },
   { question: "一年有多少个月是31天？", options: ["6个月", "7个月", "8个月"], answer: 1 },
-  { question: "王思宇的外号叫什么？", options: ["六宇", "七宇", "八宇"], answer: 2 },
+  { question: "王思宇的外号叫什么？", options: ["玉面狐狸", "大尾巴狼", "全能老虎"], answer: 2 },
   { question: "世界上面积最大的海洋是？", options: ["印度洋", "大西洋", "太平洋"], answer: 2 },
   { question: "下列哪个国家横跨欧亚两洲？", options: ["土耳其", "德国", "印度"], answer: 0 },
   { question: "王思宇常以哪个动物自居？", options: ["大象", "狐狸", "老虎"], answer: 2 },
